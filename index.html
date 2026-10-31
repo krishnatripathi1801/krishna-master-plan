@@ -134,7 +134,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <body>
 <div class="header">
   <h1>Krishna's Master Transformation Plan</h1>
-  <p>Pure Veg · No Eggs · No Curd · No Tofu · Buffalo Milk ✓ · Natural Protein Only · GATE CSE · Gym 8 PM</p>
+  <p>Pure Veg · No Eggs · No Curd · No Tofu · Buffalo Milk ✓ · Natural Protein Only · GATE CSE · Home Workouts + Gym Plan</p>
   <div class="stat-row">
     <div class="stat-box"><div class="sl">Weight</div><div class="sv">104 kg</div></div>
     <div class="stat-box"><div class="sl">Height</div><div class="sv">5'9"</div></div>
@@ -148,14 +148,17 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <div class="tabs">
   <div class="tab active" onclick="sw('diet',this)">🍽 Diet & Meals</div>
   <div class="tab" onclick="sw('protein',this)">💪 Protein Sources</div>
+  <div class="tab" onclick="sw('home',this)">🏠 Home Workout</div>
   <div class="tab" onclick="sw('gym',this)">🏋 Gym Plan</div>
   <div class="tab" onclick="sw('cardio',this)">🏃 Cardio Guide</div>
-  <div class="tab" onclick="sw('timetable',this)">⏰ Daily Schedule</div>
+  <div class="tab" onclick="sw('timetable',this)">⏰ Gym-day Schedule</div>
   <div class="tab" onclick="sw('deficiency',this)">🧬 Deficiencies</div>
   <div class="tab" onclick="sw('supplements',this)">💊 Supplements</div>
   <div class="tab" onclick="sw('hair',this)">🌿 Hair Plan</div>
   <div class="tab" onclick="sw('face',this)">✨ Face & Jawline</div>
-  <div class="tab" onclick="sw('skin',this)">🌟 Skin</div>
+  <div class="tab" onclick="sw('glow',this)">☀️ Glowing Skin</div>
+  <div class="tab" onclick="sw('skin',this)">🌟 Skin Tightening</div>
+  <div class="tab" onclick="sw('lifestyle',this)">🧘 Lifestyle</div>
   <div class="tab" onclick="sw('water',this)">💧 Water</div>
   <div class="tab" onclick="sw('progress',this)">📈 Progress</div>
 </div>
@@ -171,7 +174,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="mini-card"><div class="ml">Fat (healthy)</div><div class="mv">45–55 g</div></div>
   </div>
 
-  <div class="alert">No sugar, no maida, no cold drinks, no fried food, no white rice at dinner. This is the single most important rule for fast fat loss.</div>
+  <div class="alert">No sugar, no maida, no cold drinks, no fried food, no white rice at dinner. Cutting sugary drinks, sweets and refined snacks is one of the easiest ways to lower calories without feeling hungry, which is what drives fat loss.</div>
 
   <!-- MEAL 1 -->
   <div class="meal-section">
@@ -185,12 +188,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <div class="item-row"><div class="item-name">Warm water + lemon juice<div class="qty">300 ml warm water + juice of ½ lemon</div></div><div class="item-macros"><div class="cal">5 kcal</div><div class="pro">0g protein</div></div></div>
       <div class="item-row"><div class="item-name">Soaked almonds<div class="qty">7–8 almonds (soaked overnight, peel off skin)</div></div><div class="item-macros"><div class="cal">55 kcal</div><div class="pro">2g protein</div></div></div>
       <div class="item-row"><div class="item-name">Soaked walnuts<div class="qty">2 whole walnuts = 4 halves</div></div><div class="item-macros"><div class="cal">52 kcal</div><div class="pro">1g protein</div></div></div>
-      <p class="note">Best for: Digestion boost, Omega-3 start, Vitamin E. Drink water first always.</p>
+      <p class="note">Gives vitamin E, healthy fats and a little plant omega-3 (ALA). Warm lemon water is simply a pleasant, hydrating start to the day.</p>
     </div>
     <div id="m1B" class="option-panel">
       <div class="item-row"><div class="item-name">Warm water with soaked methi seeds<div class="qty">1 glass warm water + 1 tsp methi soaked overnight</div></div><div class="item-macros"><div class="cal">15 kcal</div><div class="pro">0g</div></div></div>
       <div class="item-row"><div class="item-name">Soaked almonds + peanuts<div class="qty">5 almonds + 1 tbsp peanuts</div></div><div class="item-macros"><div class="cal">95 kcal</div><div class="pro">4g</div></div></div>
-      <p class="note">Best for: Blood sugar control, metabolism boost, reduces hunger until breakfast.</p>
+      <p class="note">Optional. Nuts add protein and fibre, which help you feel full. Fenugreek (methi) has only small, mixed evidence for blood sugar.</p>
     </div>
     <div id="m1C" class="option-panel">
       <div class="item-row"><div class="item-name">Amla juice or raw amla<div class="qty">1 raw amla OR 30 ml amla juice in water</div></div><div class="item-macros"><div class="cal">10 kcal</div><div class="pro">0g</div></div></div>
@@ -353,7 +356,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <tr><td>Post-gym dinner (9:30 PM)</td><td>415–520 kcal</td><td>25–31g</td></tr>
       <tr><td><strong>TOTAL</strong></td><td><strong>~1900–1950 kcal</strong></td><td><strong>~110–120g</strong></td></tr>
     </table>
-    <p class="note" style="margin-top:8px">This is a 500–700 kcal daily deficit for your weight and activity level = ~0.8–1.2 kg fat loss per week safely.</p>
+    <p class="note" style="margin-top:8px">This is roughly a 500–900 kcal daily deficit for your size, which is about 0.5–0.9 kg of weight loss per week (1 kg of body fat is about 7,700 kcal). Early weeks show more because of water. Use the calculator in the Home Workout tab and adjust using your 2–3 week weight trend.</p>
   </div>
 
   <div class="sec-title">No sugar diet — complete guide</div>
@@ -409,8 +412,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="card">
     <ul class="step-list">
       <li class="step-item"><span class="num">1</span><div><div class="s-title">Paneer is your best friend — eat 150–200g daily across meals</div><div class="s-desc">Buy from a trusted shop or make at home by curdling buffalo milk with lemon. Home paneer from buffalo milk is highest quality and cheapest.</div></div></li>
-      <li class="step-item"><span class="num">2</span><div><div class="s-title">Sprout your legumes daily — doubles protein and nutrient availability</div><div class="s-desc">Soak moong/chana overnight. Tie in cloth. Ready in 12–16 hours. Sprouting increases protein absorption by 30% and adds live Vitamin C.</div></div></li>
-      <li class="step-item"><span class="num">3</span><div><div class="s-title">Have protein at every single meal — never eat a carb-only meal</div><div class="s-desc">Dal or paneer must be present at breakfast, lunch, and dinner. Without protein at a meal, your body burns muscle for energy instead of fat.</div></div></li>
+      <li class="step-item"><span class="num">2</span><div><div class="s-title">Sprouting legumes is optional but useful</div><div class="s-desc">Soak moong/chana overnight. Tie in cloth. Ready in 12–16 hours. Sprouting reduces some anti-nutrients (phytates) and adds a little vitamin C; it does not add much protein. Cook sprouts lightly (steam 3–5 min) for food safety.</div></div></li>
+      <li class="step-item"><span class="num">3</span><div><div class="s-title">Have protein at every single meal — never eat a carb-only meal</div><div class="s-desc">Dal or paneer must be present at breakfast, lunch, and dinner. Spreading protein over the day (roughly 20–35g per meal) helps you keep muscle while you are in a calorie deficit and keeps you fuller.</div></div></li>
       <li class="step-item"><span class="num">4</span><div><div class="s-title">Combine dal + paneer for highest protein at dinner</div><div class="s-desc">Dal alone has incomplete amino acids. When combined with paneer (or any dairy), you get a complete protein profile — better for muscle repair overnight.</div></div></li>
       <li class="step-item"><span class="num">5</span><div><div class="s-title">Peanut butter (natural, no sugar brand) is affordable and protein-dense</div><div class="s-desc">Add to chilla, spread on chapati, or mix in milk. My Fitness / Pintola natural peanut butter — 8g protein per 2 tbsp, only ~180 kcal.</div></div></li>
     </ul>
@@ -418,14 +421,205 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 </div>
 
 
+<!-- HOME WORKOUT SECTION -->
+<div id="home" class="section">
+<div class="tip">You can train effectively at home. Muscle and strength respond to how hard a set is (close to your limit), not to the machine. Bodyweight moves, a backpack of books and water cans are enough for a beginner at 104 kg. This plan is 4 strength days + 1 cardio/core day + daily walking. The Gym tab is unchanged and ready for when you return.</div>
+
+<div class="sec-title">1. How you actually lose weight at home (the 5 levers)</div>
+<div class="grid2">
+<div class="mini-card"><div class="ml">1. Calorie deficit (the main driver)</div><div class="mv" style="font-size:13px">Eat about 500–800 kcal below maintenance. Your meal plan (~1900 kcal) does this. Fat loss happens only when you eat less than you burn.</div></div>
+<div class="mini-card"><div class="ml">2. Strength training 4×/week</div><div class="mv" style="font-size:13px">Tells your body to keep muscle while fat is lost. This is what keeps you looking toned instead of "skinny-soft".</div></div>
+<div class="mini-card"><div class="ml">3. Daily steps 8,000–10,000</div><div class="mv" style="font-size:13px">Everyday movement burns more over a week than most people expect and is easy on joints. Build up gradually.</div></div>
+<div class="mini-card"><div class="ml">4. Protein 110–120 g/day</div><div class="mv" style="font-size:13px">Supports muscle during a deficit and keeps you full. Spread it over 4 meals.</div></div>
+<div class="mini-card"><div class="ml">5. Sleep 7+ hours</div><div class="mv" style="font-size:13px">Short sleep raises hunger and cravings and slows recovery.</div></div>
+<div class="mini-card"><div class="ml">Safe pace</div><div class="mv" style="font-size:13px">0.5–1 kg per week. Faster loss costs muscle, hair and energy.</div></div>
+</div>
+<div class="warn">No exercise burns fat from one body part. Squats, side planks or inner-thigh moves strengthen those muscles, but side-belly, inner-thigh and face fat go down only as your total body fat goes down. Where fat leaves first is mostly genetic. This is well established in research.</div>
+
+<div class="sec-title">2. Your numbers (estimate)</div>
+<div class="card">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:10px">
+<label style="font-size:12px">Age (years)<br><input id="c_age" type="number" value="22" min="16" max="70" style="width:100%;padding:6px;border:1px solid #ccc;border-radius:6px"></label>
+<label style="font-size:12px">Weight (kg)<br><input id="c_wt" type="number" value="104" min="40" max="250" style="width:100%;padding:6px;border:1px solid #ccc;border-radius:6px"></label>
+<label style="font-size:12px">Height (cm)<br><input id="c_ht" type="number" value="175" min="120" max="230" style="width:100%;padding:6px;border:1px solid #ccc;border-radius:6px"></label>
+<label style="font-size:12px">Goal weight (kg)<br><input id="c_goal" type="number" value="78" min="40" max="200" style="width:100%;padding:6px;border:1px solid #ccc;border-radius:6px"></label>
+<label style="font-size:12px">Activity<br><select id="c_act" style="width:100%;padding:6px;border:1px solid #ccc;border-radius:6px">
+<option value="1.2">Mostly sitting, no exercise</option>
+<option value="1.375" selected>Study + 3–4 workouts/week</option>
+<option value="1.55">Study + 5 workouts + 8–10k steps</option>
+</select></label>
+<label style="font-size:12px">Planned intake (kcal)<br><input id="c_plan" type="number" value="1900" min="1200" max="4000" style="width:100%;padding:6px;border:1px solid #ccc;border-radius:6px"></label>
+</div>
+<button onclick="calcNums()" style="background:#3C3489;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer">Calculate</button>
+<div id="c_out" style="margin-top:12px;font-size:13px;line-height:1.7"></div>
+<p class="note">Uses the Mifflin–St Jeor equation for men. Real values vary by about ±10–15%. Weigh yourself weekly; if your average weight has not moved after 2–3 weeks, reduce intake by about 100–150 kcal or add 2,000 steps/day. If you lose faster than 1 kg/week, eat a bit more.</p>
+</div>
+
+<div class="sec-title">3. Equipment (all optional upgrades are cheap)</div>
+<div class="card"><table class="ft">
+<tr><th>Free at home</th><th>Cheap upgrades (later)</th></tr>
+<tr><td>Sturdy chair, wall, table/kitchen counter (for incline push-ups), stairs or a firm step, towel (for hamstring slides on a smooth floor), a backpack loaded with books (start 4–6 kg, max about 10 kg), 1–5 L water bottles/cans as dumbbells</td><td>Exercise mat (₹300–600), resistance band set (₹400–800), adjustable dumbbells (when ready), doorway pull-up bar (₹600–1,200), supportive shoes for step-ups and walking</td></tr>
+</table></div>
+<div class="alert">Safety: Check with a doctor before starting if you have any heart, blood-pressure, diabetes or joint problem. Stop if you feel chest pain, fainting, unusual shortness of breath or sharp joint pain. Because you have had thigh and hip cramps, warm up well, drink enough water, include banana or coconut water on workout days, and stretch after training. If cramps keep happening, get B12, vitamin D and electrolyte levels checked. Avoid jumping moves for now; they are hard on knees at your weight.</div>
+
+<div class="sec-title">4. Weekly home plan</div>
+<div class="card"><table class="ft">
+<tr><th>Day</th><th>Session</th><th>Time</th><th>Focus</th></tr>
+<tr><td>Mon</td><td>Lower body A + brisk walk</td><td>45–55 min</td><td>Quads, glutes, hamstrings, inner thighs</td></tr>
+<tr><td>Tue</td><td>Upper body A (push) + core</td><td>45 min</td><td>Chest, shoulders, triceps, back, abs</td></tr>
+<tr><td>Wed</td><td>Cardio + core</td><td>40 min</td><td>Heart fitness, calorie burn, core</td></tr>
+<tr><td>Thu</td><td>Active rest: 30–40 min walk + stretching</td><td>40–50 min</td><td>Recovery, steps</td></tr>
+<tr><td>Fri</td><td>Lower body B + brisk walk</td><td>45–55 min</td><td>Single-leg strength, glutes, hamstrings</td></tr>
+<tr><td>Sat</td><td>Upper body B (pull) + low-impact intervals</td><td>45–50 min</td><td>Back, posture, arms, shoulders</td></tr>
+<tr><td>Sun</td><td>Rest (easy walk optional)</td><td>—</td><td>Recovery, weekly review, meal prep</td></tr>
+</table></div>
+
+<div class="sec-title">5. How to train (rules that make bodyweight work)</div>
+<div class="card"><ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Stop 2 reps before you would fail</div><div class="s-desc">If the set says 12 reps, choose a version where rep 12 feels hard but you could still do about 2 more with good form.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Tempo: 2 seconds down, 1 second up, no bouncing</div><div class="s-desc">Slow lowering makes easy moves harder without extra equipment.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Rest 60–90 seconds between sets (2 minutes for squats and hinges)</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Progress every week (progressive overload)</div><div class="s-desc">Order: add reps → add a set → slow the tempo → move to a harder variation → add backpack weight. Write every session in a notebook so you know you are improving.</div></div></li>
+<li class="step-item"><span class="num">5</span><div><div class="s-title">Levels</div><div class="s-desc">Level 1 = weeks 1–4 (3 sets, easier versions, learn form). Level 2 = weeks 5–8 (harder variations, 3–4 sets). Level 3 = week 9 onward (backpack load, single-leg, add intervals). Move up only when you can do the top of the rep range on all sets with good form.</div></div></li>
+<li class="step-item"><span class="num">6</span><div><div class="s-title">Breathe</div><div class="s-desc">Breathe out on the effort, breathe in on the easy part. Never hold your breath through a rep.</div></div></li>
+</ul></div>
+
+<div class="sec-title">6. Warm-up (6 min, every session) and cool-down (5 min)</div>
+<div class="card"><table class="ft">
+<tr><th>Warm-up</th><th>Cool-down</th></tr>
+<tr><td>March in place 2 min → arm circles 10 each way → hip circles 10 each way → bodyweight squats 10 → cat-cow 8 → leg swings 10 each leg → 1 easy set of the first exercise</td><td>Slow walk 2 min → quad stretch 30 s/leg → hamstring stretch 30 s/leg → hip-flexor stretch 30 s/side → chest stretch at doorway 30 s → child's pose 30 s → slow breathing 1 min</td></tr>
+</table></div>
+
+<div class="sec-title">7. Monday — Lower body A <span class="day-badge db-str">Strength</span></div>
+<div class="card"><table class="ft">
+<tr><th>Exercise</th><th>Sets × reps</th><th>Works</th><th>How to do it</th><th>Easier / harder</th></tr>
+<tr><td>Chair sit-to-stand squat</td><td>3 × 10–15</td><td>Quads, glutes</td><td>Feet shoulder-width, sit back onto chair, stand up without using hands, knees follow toes, chest up</td><td>Easier: higher seat. Harder: 3-sec lowering, then hold backpack at chest</td></tr>
+<tr><td>Glute bridge</td><td>3 × 12–15 (hold 1–2 s)</td><td>Glutes, hamstrings</td><td>Lie on back, knees bent, push through heels, ribs down so lower back does not arch, squeeze glutes at top</td><td>Harder: backpack on hips, then single-leg</td></tr>
+<tr><td>Wide-stance (sumo) squat</td><td>3 × 12</td><td>Glutes, quads, inner thighs</td><td>Feet about 1.5× shoulder width, toes out about 30°, knees over toes, hips down between feet</td><td>Harder: hold backpack in front</td></tr>
+<tr><td>Reverse lunge (hold wall or chair)</td><td>3 × 8 each leg</td><td>Quads, glutes</td><td>Step back, lower back knee toward floor, push through front heel. Gentler on knees than forward lunges</td><td>Harder: no support, then backpack</td></tr>
+<tr><td>Backpack hip hinge (good morning)</td><td>3 × 12</td><td>Hamstrings, glutes, lower back</td><td>Soft knees, push hips back with a flat back until hamstrings stretch, then stand tall. Backpack held to chest or on shoulders</td><td>Easier: no weight</td></tr>
+<tr><td>Standing calf raise (edge of a step)</td><td>3 × 15–20</td><td>Calves</td><td>Rise slowly onto toes, pause, lower slowly. Hold a wall for balance</td><td>Harder: one leg</td></tr>
+<tr><td>Side-lying inner-thigh lift</td><td>2 × 12–15 each side</td><td>Inner thigh muscles</td><td>Lie on side, top leg bent with foot in front, lift bottom leg straight up, lower slowly</td><td>Harder: ankle weight/bottle</td></tr>
+<tr><td>Finish: brisk walk or stairs</td><td>15–20 min</td><td>Cardio</td><td>Pace where you can talk but not sing</td><td>—</td></tr>
+</table></div>
+
+<div class="sec-title">8. Tuesday — Upper body A (push) + core <span class="day-badge db-str">Strength</span></div>
+<div class="card"><table class="ft">
+<tr><th>Exercise</th><th>Sets × reps</th><th>Works</th><th>How to do it</th><th>Easier / harder</th></tr>
+<tr><td>Incline push-up (hands on table/counter)</td><td>3 × 8–12</td><td>Chest, shoulders, triceps</td><td>Body in a straight line, elbows about 45° from your body, chest to the edge, push away. No sagging hips</td><td>Easier: wall. Harder: lower surface → knees on floor → full push-up</td></tr>
+<tr><td>Overhead press with water bottles/cans</td><td>3 × 10–12</td><td>Shoulders, triceps</td><td>Stand tall, glutes tight, press from shoulder height to straight overhead, lower slowly</td><td>Harder: heavier cans, slower tempo</td></tr>
+<tr><td>Pike push-up (hips high)</td><td>3 × 6–10</td><td>Shoulders</td><td>Hands and feet on floor, hips up in an inverted V, lower the top of your head toward the floor</td><td>Easier: hands on a table. Harder: feet on a chair</td></tr>
+<tr><td>Backpack overhead triceps extension</td><td>3 × 10–12</td><td>Triceps</td><td>Hold backpack/bottle with both hands overhead, bend elbows to lower behind head, extend. Elbows point forward</td><td>Easier: lighter bottle</td></tr>
+<tr><td>Backpack bent-over row</td><td>3 × 10–12</td><td>Back, rear shoulders, biceps</td><td>Hinge forward with a flat back, pull the backpack to your lower ribs, squeeze shoulder blades</td><td>Harder: heavier backpack</td></tr>
+<tr><td>Superman hold</td><td>3 × 10 (hold 2 s)</td><td>Lower and upper back</td><td>Lie face down, lift arms and legs slightly, look at the floor</td><td>Easier: lift arms only</td></tr>
+<tr><td>Plank</td><td>3 × 20–40 s</td><td>Core</td><td>Forearms down, body straight, abs braced, glutes tight</td><td>Easier: knees down. Harder: build to 60 s+</td></tr>
+<tr><td>Dead bug</td><td>3 × 8 each side</td><td>Deep core</td><td>On your back, arms up, knees at 90°; lower opposite arm and leg while lower back stays flat to the floor</td><td>Easier: only move legs</td></tr>
+</table></div>
+
+<div class="sec-title">9. Wednesday — Cardio + core <span class="day-badge db-card">Cardio</span></div>
+<div class="card"><table class="ft">
+<tr><th>Level</th><th>Cardio (25–30 min)</th></tr>
+<tr><td>Level 1 (weeks 1–4)</td><td>Brisk walk 30–40 min outdoors, or marching in place/around the house if weather is bad</td></tr>
+<tr><td>Level 2 (weeks 5–8)</td><td>Intervals: 2 min brisk walk, 1 min faster walk or stair climbing × 8–10</td></tr>
+<tr><td>Level 3 (week 9+)</td><td>Low-impact circuit, 40 s work / 20 s rest, 4 rounds: high-knee march, step-jacks (no jump), shadow boxing, chair squats</td></tr>
+</table></div>
+<div class="card"><table class="ft">
+<tr><th>Core finisher</th><th>Sets × reps</th><th>How</th></tr>
+<tr><td>Bird dog</td><td>3 × 8 each side</td><td>On hands and knees, extend opposite arm and leg, keep hips level, pause 2 s</td></tr>
+<tr><td>Side plank (knees down at first)</td><td>3 × 15–30 s each side</td><td>Elbow under shoulder, lift hips, body in a straight line</td></tr>
+<tr><td>Reverse crunch</td><td>3 × 10–12</td><td>Lying down, curl hips off the floor using lower abs, slow lowering</td></tr>
+<tr><td>Slow bicycle crunch</td><td>3 × 12 each side</td><td>Elbow toward opposite knee, no neck pulling, slow tempo</td></tr>
+<tr><td>Slow mountain climbers (hands on table)</td><td>3 × 20</td><td>Plank on a table edge, drive knees alternately toward chest, no jumping</td></tr>
+</table></div>
+
+<div class="sec-title">10. Friday — Lower body B <span class="day-badge db-str">Strength</span></div>
+<div class="card"><table class="ft">
+<tr><th>Exercise</th><th>Sets × reps</th><th>Works</th><th>How to do it</th><th>Easier / harder</th></tr>
+<tr><td>Static split squat (hold wall)</td><td>3 × 8–10 each leg</td><td>Quads, glutes</td><td>Long stance, lower straight down, front knee over mid-foot, back knee toward floor</td><td>Harder: backpack, back foot on chair</td></tr>
+<tr><td>Step-up (sturdy step or stair)</td><td>3 × 8–10 each leg</td><td>Quads, glutes</td><td>Place whole foot on step, drive through that heel, control the way down. Step about 20–30 cm high</td><td>Harder: backpack</td></tr>
+<tr><td>Lateral (side) lunge, shallow</td><td>3 × 8 each side</td><td>Inner thighs, glutes</td><td>Step wide to the side, sit hips back, keep the other leg straight, push back to start</td><td>Easier: smaller step. Harder: backpack</td></tr>
+<tr><td>Single-leg glute bridge</td><td>3 × 10–12 each leg</td><td>Glutes, hamstrings</td><td>Like glute bridge with one foot lifted, hips stay level</td><td>Easier: two-leg bridge with a pause</td></tr>
+<tr><td>Towel hamstring slide (smooth floor)</td><td>3 × 8–12</td><td>Hamstrings</td><td>Lie on back, heels on towel, bridge up, slide heels out slowly and pull back in</td><td>Easier: smaller range</td></tr>
+<tr><td>Wall sit</td><td>3 × 30–45 s</td><td>Quads</td><td>Back flat on wall, thighs near parallel, knees over ankles</td><td>Easier: higher position</td></tr>
+<tr><td>Calf raises</td><td>3 × 15–20</td><td>Calves</td><td>As on Monday</td><td>—</td></tr>
+<tr><td>Finish: brisk walk or stairs</td><td>15–20 min</td><td>Cardio</td><td>Talk-but-not-sing pace</td><td>—</td></tr>
+</table></div>
+
+<div class="sec-title">11. Saturday — Upper body B (pull) + intervals <span class="day-badge db-str">Strength</span></div>
+<div class="card"><table class="ft">
+<tr><th>Exercise</th><th>Sets × reps</th><th>Works</th><th>How to do it</th><th>Easier / harder</th></tr>
+<tr><td>One-arm row (backpack or 5 L can)</td><td>3 × 10–12 each arm</td><td>Lats, mid-back</td><td>One hand on chair/table, flat back, pull elbow toward hip, pause, lower slowly</td><td>Harder: heavier load</td></tr>
+<tr><td>Reverse snow angel (face down)</td><td>3 × 12</td><td>Rear shoulders, upper back</td><td>Lie face down, sweep straight arms from sides to overhead, hovering above the floor</td><td>Band pull-apart if you buy a band</td></tr>
+<tr><td>Push-up at your current level</td><td>3 × reps leaving 2 in reserve</td><td>Chest, triceps</td><td>As on Tuesday</td><td>Move to a harder variation when you reach 15 clean reps</td></tr>
+<tr><td>Hammer curl with bottles</td><td>3 × 12</td><td>Biceps, forearms</td><td>Elbows pinned to your sides, thumbs up, slow lowering</td><td>Harder: heavier bottles</td></tr>
+<tr><td>Lateral raise with bottles</td><td>3 × 12–15</td><td>Side shoulders</td><td>Soft elbows, raise to shoulder height, lower slowly</td><td>Light weight only</td></tr>
+<tr><td>Side plank</td><td>3 × 20–40 s each side</td><td>Obliques</td><td>As on Wednesday</td><td>—</td></tr>
+<tr><td>Low-impact intervals</td><td>15–20 min</td><td>Cardio</td><td>1 min brisk / 1 min easy walking or stair climbing</td><td>—</td></tr>
+</table></div>
+<p class="note">If you buy a doorway pull-up bar, replace the rows with assisted chin-ups (feet on a chair) or slow negatives, 3 × 3–6. Pull-ups are one of the best upper-back exercises you can add.</p>
+
+<div class="sec-title">12. Thursday and Sunday</div>
+<div class="card"><table class="ft">
+<tr><th>Thursday (active rest)</th><th>Sunday (rest)</th></tr>
+<tr><td>30–40 min walk. Then 10 min stretching: hamstrings, hip flexors, quads, chest, thoracic rotations, cat-cow, child's pose.</td><td>No training. Easy walk if you like. Weekly weigh-in and photos, plan next week's meals, soak chana/rajma, set out clothes for Monday.</td></tr>
+</table></div>
+
+<div class="sec-title">13. Which exercise for which area</div>
+<div class="card"><table class="ft">
+<tr><th>Area</th><th>Best home exercises</th></tr>
+<tr><td>Chest</td><td>Incline, knee and full push-ups</td></tr>
+<tr><td>Shoulders</td><td>Overhead press, pike push-up, lateral raise</td></tr>
+<tr><td>Back and posture</td><td>Backpack rows, reverse snow angel, superman, bird dog</td></tr>
+<tr><td>Arms</td><td>Hammer curl, overhead triceps extension, close-hand push-up</td></tr>
+<tr><td>Glutes</td><td>Glute bridge, step-up, hip hinge, split squat</td></tr>
+<tr><td>Quads</td><td>Sit-to-stand squat, wall sit, reverse lunge</td></tr>
+<tr><td>Hamstrings</td><td>Hip hinge, towel slides, single-leg bridge</td></tr>
+<tr><td>Inner thighs</td><td>Sumo squat, side lunge, side-lying inner-thigh lift</td></tr>
+<tr><td>Core and sides</td><td>Plank, side plank, dead bug, bird dog, reverse crunch</td></tr>
+<tr><td>Calories and heart</td><td>Walking, stairs, interval walking, circuits</td></tr>
+</table></div>
+<p class="note">Reminder: these train the muscles in each area. Fat leaves your body as a whole, not area by area.</p>
+
+<div class="sec-title">14. Your home day (replaces the gym schedule)</div>
+<div class="card"><table class="ft">
+<tr><th>Time</th><th>What</th></tr>
+<tr><td>6:00 AM</td><td>Wake, water + lemon, morning ritual, 10 min outdoor light</td></tr>
+<tr><td>6:15–9:00 AM</td><td>Study block 1 (stand and walk 2–3 min every 50 min)</td></tr>
+<tr><td>9:00–9:30 AM</td><td>Breakfast</td></tr>
+<tr><td>9:30 AM–1:00 PM</td><td>Study block 2</td></tr>
+<tr><td>1:00–1:45 PM</td><td>Lunch + 10 min walk</td></tr>
+<tr><td>1:45–4:00 PM</td><td>Study block 3 (revision)</td></tr>
+<tr><td>4:00–4:30 PM</td><td>Snack + short walk</td></tr>
+<tr><td>4:30–6:15 PM</td><td>Study block 4</td></tr>
+<tr><td>6:15–6:30 PM</td><td>Small pre-workout snack (banana or roasted chana), water</td></tr>
+<tr><td>6:30–7:30 PM</td><td>Home workout (warm-up, strength, finisher, cool-down)</td></tr>
+<tr><td>7:30–8:15 PM</td><td>Shower + protein-rich dinner (paneer/dal options)</td></tr>
+<tr><td>8:15–10:00 PM</td><td>Study block 5 (practice problems, revision)</td></tr>
+<tr><td>10:00–11:00 PM</td><td>Wind down: night skin routine, face exercises, scalp massage, supplements, screens off</td></tr>
+<tr><td>11:00 PM–6:00 AM</td><td>Sleep (7 hours)</td></tr>
+</table></div>
+<p class="note">The best workout time is the one you will keep. If you prefer mornings, train 6:15–7:15 AM with a banana first and move study after breakfast. Finish hard training at least 2–3 hours before bed.</p>
+
+<div class="sec-title">15. Measure progress every 4 weeks</div>
+<div class="card"><table class="ft">
+<tr><th>Test</th><th>Why</th></tr>
+<tr><td>Chair squats in 60 seconds</td><td>Leg endurance</td></tr>
+<tr><td>Max clean push-ups at your level</td><td>Upper body strength</td></tr>
+<tr><td>Plank hold time</td><td>Core endurance</td></tr>
+<tr><td>Time to walk 2 km at brisk pace</td><td>Fitness</td></tr>
+<tr><td>Waist at navel, thigh, photos</td><td>Body change even when the scale stalls</td></tr>
+</table></div>
+</div>
+
 <div id="gym" class="section">
+<div class="warn">This gym plan is kept as it was, for when you go back to the gym. While you study at home, follow the <strong>Home Workout</strong> tab.</div>
   <div class="tip">8 PM gym time is fine. You go after dinner prep. Keep dinner light and pre-gym meal at 7 PM. Full workout structure: 10 min warmup → 55 min weights → 20 min cardio → 5 min cooldown = 90 min total.</div>
 
   <div class="sec-title">Monday — Chest + Triceps <span class="day-badge db-str">Strength</span></div>
   <div class="day-card">
     <ul class="ex-list">
       <li class="ex-item"><span class="dot"></span><div><strong>Barbell Bench Press</strong> — 4 sets × 10–12 reps | Rest: 90 sec<br><span style="color:#666;font-size:12px">Start weight: 30–40 kg. Increase 2.5 kg every week. Flat back, control descent.</span></div></li>
-      <li class="ex-item"><span class="dot"></span><div><strong>Incline Dumbbell Press</strong> — 3 sets × 10 reps | Rest: 75 sec<br><span style="color:#666;font-size:12px">Start: 10–12 kg dumbbells each hand. Reduces man-boob appearance fast.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Incline Dumbbell Press</strong> — 3 sets × 10 reps | Rest: 75 sec<br><span style="color:#666;font-size:12px">Start: 10–12 kg dumbbells each hand. Trains the upper chest and shoulders. Chest fat itself reduces only as total body fat falls.</span></div></li>
       <li class="ex-item"><span class="dot"></span><div><strong>Cable Crossover / Chest Fly</strong> — 3 sets × 12 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Light weight, slow squeeze. Defines chest line.</span></div></li>
       <li class="ex-item"><span class="dot"></span><div><strong>Tricep Pushdown (cable)</strong> — 3 sets × 12–15 reps | Rest: 60 sec</div></li>
       <li class="ex-item"><span class="dot"></span><div><strong>Overhead Tricep Extension (dumbbell)</strong> — 3 sets × 12 reps | Rest: 60 sec</div></li>
@@ -449,10 +643,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="day-card">
     <ul class="ex-list">
       <li class="ex-item"><span class="dot"></span><div><strong>Goblet Squat (dumbbell)</strong> — 4 sets × 12 reps | Rest: 90 sec<br><span style="color:#666;font-size:12px">Start: 10–12 kg dumbbell held at chest. Safer than barbell squat at 104 kg initially.</span></div></li>
-      <li class="ex-item"><span class="dot"></span><div><strong>Leg Press (wide stance)</strong> — 3 sets × 12 reps | Rest: 75 sec<br><span style="color:#666;font-size:12px">Wide foot placement targets inner thigh directly. Best exercise for inner thigh fat.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Leg Press (wide stance)</strong> — 3 sets × 12 reps | Rest: 75 sec<br><span style="color:#666;font-size:12px">A wider stance works the inner-thigh (adductor) and glute muscles more. It builds muscle under the fat but cannot burn fat from the thigh specifically.</span></div></li>
       <li class="ex-item"><span class="dot"></span><div><strong>Romanian Deadlift</strong> — 3 sets × 10 reps | Rest: 90 sec<br><span style="color:#666;font-size:12px">Start: 30–40 kg barbell. Hamstrings + glutes. Hinge at hips, not knees.</span></div></li>
       <li class="ex-item"><span class="dot"></span><div><strong>Walking Lunges</strong> — 3 sets × 10 each leg | Rest: 60 sec<br><span style="color:#666;font-size:12px">No weight initially — your bodyweight is heavy enough. Add dumbbells from month 2.</span></div></li>
-      <li class="ex-item"><span class="dot"></span><div><strong>Hip Adduction Machine (inner thigh)</strong> — 3 sets × 15 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Directly targets inner thigh fat zone. Light weight, full range of motion.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Hip Adduction Machine (inner thigh)</strong> — 3 sets × 15 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Strengthens the inner-thigh muscles. Fat loss there depends on total fat loss, not this exercise.</span></div></li>
       <li class="ex-item"><span class="dot"></span><div><strong>Stationary Cycling</strong> — 20 min | Moderate resistance<br><span style="color:#666;font-size:12px">Easy on joints post-leg day. Burns ~200 kcal.</span></div></li>
     </ul>
   </div>
@@ -471,8 +665,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <ul class="ex-list">
       <li class="ex-item"><span class="dot"></span><div><strong>Overhead Dumbbell Press</strong> — 4 sets × 10 reps | Rest: 90 sec<br><span style="color:#666;font-size:12px">Start: 8–10 kg each hand. Builds shoulder width = makes body look broader and belly smaller.</span></div></li>
       <li class="ex-item"><span class="dot"></span><div><strong>Lateral Raises</strong> — 3 sets × 15 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Start: 5–6 kg. Light weight, slow controlled movement. Side delts = wide shoulder look.</span></div></li>
-      <li class="ex-item"><span class="dot"></span><div><strong>Face Pulls (cable)</strong> — 3 sets × 15 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Rear delts + posture. Better posture makes you look 5 kg slimmer immediately.</span></div></li>
-      <li class="ex-item"><span class="dot"></span><div><strong>Russian Twists (with 5 kg plate)</strong> — 3 sets × 20 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">BEST exercise for side belly / love handles. Hold plate, lean back 45°, twist side to side.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Face Pulls (cable)</strong> — 3 sets × 15 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Rear delts + posture. Strengthens the upper back and improves posture, so you stand taller and look leaner.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Russian Twists (with 5 kg plate)</strong> — 3 sets × 20 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Trains the obliques (side core muscles). It strengthens them but does not remove side fat; that comes from total fat loss. Hold plate, lean back 45°, twist side to side.</span></div></li>
       <li class="ex-item"><span class="dot"></span><div><strong>Plank</strong> — 3 × 45 sec (build to 90 sec by month 2) | Rest: 60 sec</div></li>
       <li class="ex-item"><span class="dot"></span><div><strong>Hanging Leg Raises</strong> — 3 × 10–12 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Lower abs + lower belly fat reduction. Hang from bar, raise legs to 90°.</span></div></li>
       <li class="ex-item"><span class="dot"></span><div><strong>Side Plank</strong> — 3 × 30 sec each side | Rest: 45 sec<br><span style="color:#666;font-size:12px">Direct love handle toner. Build up from 20 sec if too hard initially.</span></div></li>
@@ -501,9 +695,9 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="sec-title">Face fat + jawline — daily 5 min (do at bedtime)</div>
   <div class="card">
     <ul class="step-list">
-      <li class="step-item"><span class="num">1</span><div><div class="s-title">Chin tucks — 3 × 15 reps</div><div class="s-desc">Sit straight, push chin backward (double chin position), hold 5 sec, release. Builds jawline muscle directly.</div></div></li>
-      <li class="step-item"><span class="num">2</span><div><div class="s-title">Jaw clench — 20 reps</div><div class="s-desc">Slowly clench jaw tight, hold 3 sec, release slowly. Tones masseter muscle = sharp jawline.</div></div></li>
-      <li class="step-item"><span class="num">3</span><div><div class="s-title">Fish face + neck roll — 20 reps each</div><div class="s-desc">Suck cheeks in for 5 sec (cheek fat). Then full neck rolls to reduce double chin.</div></div></li>
+      <li class="step-item"><span class="num">1</span><div><div class="s-title">Chin tucks — 3 × 15 reps</div><div class="s-desc">Sit straight, push chin backward (double chin position), hold 5 sec, release. Strengthens deep neck muscles and improves head posture. It will not remove face fat by itself.</div></div></li>
+      <li class="step-item"><span class="num">2</span><div><div class="s-title">Jaw clench — 20 reps</div><div class="s-desc">Slowly clench jaw tight, hold 3 sec, release slowly. Works the jaw muscles. Jaw definition mainly appears as face fat drops. Stop if it causes jaw pain or clicking.</div></div></li>
+      <li class="step-item"><span class="num">3</span><div><div class="s-title">Fish face + neck roll — 20 reps each</div><div class="s-desc">Suck cheeks in for 5 sec, then slow neck rolls. This is light muscle work; cheek and double-chin fat reduce only with overall fat loss.</div></div></li>
     </ul>
   </div>
 </div>
@@ -536,6 +730,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
 <div id="timetable" class="section">
   <div class="tip">Gym is at 8 PM. Study peaks 9 AM–1 PM and 4:30–7 PM. This schedule protects your GATE prep completely while fitting the full workout and 7 hrs sleep.</div>
+<div class="warn">This is the schedule for gym days. For home workouts, use the "Your home day" table inside the Home Workout tab.</div>
   <div class="time-line">
     <div class="trow" style="--dc:#EF9F27"><div class="t-time">6:00 AM</div><div class="t-card food"><div class="t-title">Wake up + morning drink</div><div class="t-desc">Warm lemon water + soaked almonds + walnuts. No heavy food yet.</div></div></div>
     <div class="trow" style="--dc:#1D9E75"><div class="t-time">6:15–9:00 AM</div><div class="t-card study"><div class="t-title">Study Block 1 — Deep focus (GATE hardest topics)</div><div class="t-desc">Maths, algorithms, theory. Freshest brain. Phone on DND. 2 hrs 45 min.</div></div></div>
@@ -548,11 +743,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
     <div class="trow" style="--dc:#EF9F27"><div class="t-time">7:00–7:30 PM</div><div class="t-card food"><div class="t-title">Pre-gym meal</div><div class="t-desc">Banana + peanut butter OR any Pre-gym option. Light. Change clothes, get ready.</div></div></div>
     <div class="trow" style="--dc:#7F77DD"><div class="t-time">8:00–9:30 PM</div><div class="t-card gym"><div class="t-title">GYM — 90 minutes</div><div class="t-desc">10 min warmup → 55 min weights → 20 min cardio → 5 min stretch. Follow weekly plan.</div></div></div>
     <div class="trow" style="--dc:#EF9F27"><div class="t-time">9:30–10:00 PM</div><div class="t-card food"><div class="t-title">Post-workout dinner — HIGH PROTEIN</div><div class="t-desc">Any Dinner Option A/B/C. Must eat within 45 min of gym. Paneer bhurji / moong dal / thin dal.</div></div></div>
-    <div class="trow" style="--dc:#1D9E75"><div class="t-time">10:00–11:00 PM</div><div class="t-card study"><div class="t-title">Light revision only (1 hr)</div><div class="t-desc">Today's notes review ONLY. No new topics. This is memory consolidation time before sleep.</div></div></div>
-    <div class="trow" style="--dc:#D4537E"><div class="t-time">11:00–11:30 PM</div><div class="t-card rest"><div class="t-title">Wind down</div><div class="t-desc">Face exercises (5 min), scalp massage (5 min), screen off, full body stretch.</div></div></div>
-    <div class="trow" style="--dc:#185FA5"><div class="t-time">11:30 PM–6:00 AM</div><div class="t-card sleep"><div class="t-title">Sleep — 6.5 hrs</div><div class="t-desc">Fat burns, muscles grow, GATE content gets stored. Never sacrifice sleep for study — it backfires.</div></div></div>
+    <div class="trow" style="--dc:#1D9E75"><div class="t-time">10:00–10:30 PM</div><div class="t-card study"><div class="t-title">Light revision only (30 min)</div><div class="t-desc">Skim today's notes only, no new topics. Reviewing before sleep helps memory, and sleep itself helps consolidate it.</div></div></div>
+    <div class="trow" style="--dc:#D4537E"><div class="t-time">10:30–11:00 PM</div><div class="t-card rest"><div class="t-title">Wind down</div><div class="t-desc">Face exercises (5 min), scalp massage (5 min), screen off, full body stretch.</div></div></div>
+    <div class="trow" style="--dc:#185FA5"><div class="t-time">11:00 PM–6:00 AM</div><div class="t-card sleep"><div class="t-title">Sleep — 7 hrs</div><div class="t-desc">Adults need 7 or more hours. Short sleep raises hunger, lowers training recovery and hurts memory and concentration, so it makes both fat loss and GATE prep harder.</div></div></div>
   </div>
-  <div class="warn" style="margin-top:12px">Total focused study: ~9.5 hrs daily. Quality over quantity — 7 focused hrs beats 12 distracted hrs. Use Pomodoro (50 min study / 10 min break) in each block.</div>
+  <div class="warn" style="margin-top:12px">Total focused study: about 9 hrs daily. Quality over quantity — 7 focused hrs beats 12 distracted hrs. Use Pomodoro (50 min study / 10 min break) in each block.</div>
 </div>
 
 
@@ -784,6 +979,189 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 </div>
 
 <!-- WATER SECTION -->
+<!-- GLOWING SKIN SECTION -->
+<div id="glow" class="section">
+<div class="tip">Healthy, glowing skin comes from a strong skin barrier, even tone, good hydration, and protection from the sun, supported by sleep, food and exercise. No product gives an overnight glow. Skin renews itself roughly every 4–6 weeks, so judge any routine after 8–12 weeks.</div>
+
+<div class="sec-title">1. The 4 non-negotiables</div>
+<div class="card"><ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Sunscreen every morning</div><div class="s-desc">UV light is the biggest cause of tan, dark patches and early ageing, and it affects brown skin too. Use broad-spectrum SPF 30–50 (PA+++ or higher), about two finger-lengths for face and neck, and reapply every 2–3 hours when outdoors. UVA passes through window glass, so apply it if you study near a window.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Gentle cleansing, not over-washing</div><div class="s-desc">Wash face twice a day with a mild gel or foaming cleanser, and after a sweaty workout. Harsh soaps and hard scrubbing damage the barrier and make skin look dull and oily.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Moisturise, even if oily</div><div class="s-desc">Oily skin still needs water. Use a light gel or oil-free moisturiser on damp skin. A hydrated barrier looks smoother and more luminous.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Sleep 7+ hours</div><div class="s-desc">Poor sleep makes skin look duller and more tired and worsens the skin barrier.</div></div></li>
+</ul></div>
+
+<div class="sec-title">2. Daily routine</div>
+<div class="card"><table class="ft">
+<tr><th>Time</th><th>Step</th><th>Details</th></tr>
+<tr><td>Morning</td><td>1. Cleanser</td><td>Mild gel cleanser (or just water if skin feels dry)</td></tr>
+<tr><td>Morning</td><td>2. Vitamin C serum (optional)</td><td>An antioxidant with modest brightening evidence. Start with 10%, patch test, use on clean dry skin</td></tr>
+<tr><td>Morning</td><td>3. Moisturiser</td><td>Light gel, oil-free</td></tr>
+<tr><td>Morning</td><td>4. Sunscreen</td><td>SPF 30–50, broad-spectrum. Never skip</td></tr>
+<tr><td>Night</td><td>1. Cleanser</td><td>Double cleanse only if you wore heavy or waterproof sunscreen</td></tr>
+<tr><td>Night</td><td>2. One active (alternate)</td><td>Niacinamide 4–5% (helps oil, texture and uneven tone) on most nights. If you choose a retinoid (adapalene or low-strength retinol), use 2–3 nights a week to start, a pea-sized amount, and not on the same night as strong exfoliants. Ask a pharmacist or dermatologist about adapalene</td></tr>
+<tr><td>Night</td><td>3. Moisturiser</td><td>Same light gel</td></tr>
+<tr><td>1×/week</td><td>Gentle exfoliant</td><td>Salicylic acid (BHA) 1–2% for oily, clogged pores, or a mild lactic acid. Avoid rough scrubs</td></tr>
+</table></div>
+<div class="warn">Introduce one new product at a time, about 2 weeks apart. Patch test behind the ear or on the jawline for 24–48 hours first. Redness, burning or peeling means you are doing too much; stop the active and use only cleanser, moisturiser and sunscreen. Retinoids make skin sun-sensitive, so sunscreen is mandatory with them. If you start any prescription product, follow your dermatologist's instructions.</div>
+
+<div class="sec-title">3. Tan and dark patches</div>
+<div class="card"><ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Sun protection is the real tan treatment</div><div class="s-desc">Without sunscreen and shade, nothing else will keep tan from returning. Cover arms and neck when outdoors; a cap or umbrella helps.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">What helps fade it over weeks</div><div class="s-desc">Sunscreen + vitamin C + niacinamide + gentle exfoliation once a week. Expect gradual change over 6–12 weeks.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Avoid lemon juice, toothpaste, baking soda and harsh scrubs on skin</div><div class="s-desc">Lemon juice on skin plus sun can cause burns and dark patches (phytophotodermatitis). These home hacks irritate the barrier and often worsen pigmentation. A besan + curd + turmeric pack without lemon is a mild exfoliant at best and is fine once a week if it does not irritate you.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Stubborn dark patches</div><div class="s-desc">See a dermatologist. Prescription options such as azelaic acid, tranexamic acid or other lightening agents need supervision. Avoid "fairness creams" and skin-whitening pills or injections; they are unregulated, often unsafe and not proven.</div></div></li>
+</ul></div>
+
+<div class="sec-title">4. Acne and oil control</div>
+<div class="card"><ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Do not pick or squeeze</div><div class="s-desc">It causes marks and scars that last far longer than the pimple.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Post-workout care</div><div class="s-desc">Wash face and shower soon after sweating, change into clean cotton clothes, wash pillowcase and towel weekly, clean phone screen, do not rest hands on face while studying.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Diet link</div><div class="s-desc">High-sugar, high-glycaemic diets are linked with more acne, so your low-sugar plan helps. Some studies link milk and whey products with acne. If you keep breaking out after 8–12 weeks of a good routine, you could try reducing milk for 6–8 weeks and compare. The evidence is observational, so it is a trial, not a rule.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">See a dermatologist if</div><div class="s-desc">You get painful cysts or nodules, scarring, or acne that does not improve in 8–12 weeks. Effective prescription treatments exist.</div></div></li>
+</ul></div>
+
+<div class="sec-title">5. Glow from inside</div>
+<div class="card"><table class="ft">
+<tr><th>Habit</th><th>What the evidence supports</th></tr>
+<tr><td>Fruits and vegetables daily</td><td>Carotenoids from tomato, carrot, papaya, palak and similar foods add a slight healthy colour to skin in studies over a couple of months</td></tr>
+<tr><td>Protein + vitamin C</td><td>Needed to build collagen. Amla, guava and lemon with your meals cover vitamin C</td></tr>
+<tr><td>Omega-3 and healthy fats</td><td>Support the skin barrier and may reduce inflammation</td></tr>
+<tr><td>Water</td><td>Staying hydrated supports normal skin hydration, but drinking far more than you need will not fix dry skin; moisturiser does. Follow the Water tab</td></tr>
+<tr><td>Regular exercise</td><td>Improves circulation and general health; skin looks better with fitness, and the temporary post-workout flush is just blood flow</td></tr>
+<tr><td>Less sugar, no smoking, minimal alcohol</td><td>All are linked with faster skin ageing and breakouts</td></tr>
+<tr><td>Stress management</td><td>High stress can trigger breakouts and flare-ups. See the Lifestyle tab</td></tr>
+</table></div>
+
+<div class="sec-title">6. Body skin</div>
+<div class="card"><ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Lukewarm shower, moisturise on damp skin</div><div class="s-desc">Very hot water dries skin. Apply moisturiser within 3 minutes of drying off.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Gentle exfoliation 1–2×/week</div><div class="s-desc">Soft washcloth or mild scrub on back, arms and legs. Not on irritated skin.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Sunscreen on exposed arms and neck</div><div class="s-desc">This is what prevents uneven tan lines.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Back and chest breakouts</div><div class="s-desc">Wash soon after sweating. A salicylic acid body wash a few times a week can help. See a dermatologist if it persists.</div></div></li>
+</ul></div>
+
+<div class="sec-title">7. Myth check</div>
+<div class="card"><table class="ft">
+<tr><th>Myth</th><th>Reality</th></tr>
+<tr><td>Lemon juice lightens skin</td><td>Irritates and can cause sun-triggered burns and dark marks</td></tr>
+<tr><td>Toothpaste dries pimples</td><td>Irritates skin and can cause marks</td></tr>
+<tr><td>Scrubbing harder gives a glow</td><td>Damages the barrier and makes skin look duller and redder</td></tr>
+<tr><td>Detox drinks clear skin</td><td>Your liver and kidneys do the detoxing; no drink does it for the skin</td></tr>
+<tr><td>Oily skin does not need moisturiser or sunscreen</td><td>It needs both, in light formulas</td></tr>
+<tr><td>Expensive means better</td><td>Ingredients, concentration and consistent use matter, not price</td></tr>
+</table></div>
+
+<div class="sec-title">8. Weekly glow schedule</div>
+<div class="card"><table class="ft">
+<tr><th>Day</th><th>Night routine</th></tr>
+<tr><td>Mon / Wed / Fri</td><td>Cleanser → niacinamide (or retinoid if you chose one) → moisturiser</td></tr>
+<tr><td>Tue / Thu</td><td>Cleanser → niacinamide → moisturiser</td></tr>
+<tr><td>Sat</td><td>Gentle exfoliant (BHA) instead of the active; no retinoid this night</td></tr>
+<tr><td>Sun</td><td>Cleanser → moisturiser only (skin rest night), weekly photo to track skin</td></tr>
+</table></div>
+<div class="highlight"><strong>Timeline:</strong> 2–4 weeks: less dullness and oil from sunscreen, moisturiser and sleep. 8–12 weeks: more even tone and fewer breakouts. Take a bare-face photo in the same light every 2 weeks to see real changes.</div>
+</div>
+
+<!-- LIFESTYLE SECTION -->
+<div id="lifestyle" class="section">
+<div class="tip">Training and diet only work if the rest of your day supports them. This tab covers sleep, long study hours, stress, health checks, testosterone, habits and grooming. Everything here is based on standard medical and sleep-science guidance.</div>
+
+<div class="sec-title">1. Daily non-negotiables (tick as you go)</div>
+<div class="card" id="chk_card">
+<table class="ft">
+<tr><td><label><input type="checkbox" class="chk" data-k="sleep"> Slept 7+ hours</label></td><td><label><input type="checkbox" class="chk" data-k="water"> 4 L water (3–3.5 L on rest days)</label></td></tr>
+<tr><td><label><input type="checkbox" class="chk" data-k="protein"> Protein 110 g or more</label></td><td><label><input type="checkbox" class="chk" data-k="steps"> 8,000+ steps</label></td></tr>
+<tr><td><label><input type="checkbox" class="chk" data-k="workout"> Workout done (or rest day)</label></td><td><label><input type="checkbox" class="chk" data-k="spf"> Sunscreen applied</label></td></tr>
+<tr><td><label><input type="checkbox" class="chk" data-k="supp"> Supplements taken</label></td><td><label><input type="checkbox" class="chk" data-k="nosugar"> No sugary drinks or sweets</label></td></tr>
+<tr><td><label><input type="checkbox" class="chk" data-k="breaks"> Moved every hour while studying</label></td><td><label><input type="checkbox" class="chk" data-k="wind"> Screens off 30 min before bed</label></td></tr>
+</table>
+<p class="note">Ticks are saved in this browser if it allows storage; otherwise they reset when you refresh.</p>
+</div>
+
+<div class="sec-title">2. Sleep (the most underrated lever)</div>
+<div class="card"><ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Aim for 7–9 hours, same bedtime and wake time (within 30 min)</div><div class="s-desc">Adults need at least 7 hours. Short sleep increases hunger and cravings, lowers recovery and weakens memory and focus. Your plan gives 7 hours (11 PM–6 AM); move bedtime earlier if you still feel sleepy.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Morning light</div><div class="s-desc">10–20 minutes of outdoor light after waking helps set your body clock and improves sleep at night.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Caffeine cutoff about 8 hours before bed</div><div class="s-desc">Caffeine stays in the body for many hours. With an 11 PM bedtime, stop tea, coffee and energy drinks by about 2–3 PM. Keep total under about 400 mg a day (roughly 3–4 cups of tea or 3 cups of coffee).</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Wind-down routine</div><div class="s-desc">Last 30–60 minutes: dim lights, no study, no phone scrolling, light stretching, skin routine, and a book. Keep the room dark, quiet and cool.</div></div></li>
+<li class="step-item"><span class="num">5</span><div><div class="s-title">Naps</div><div class="s-desc">If needed, nap 15–25 minutes before 3 PM. Long or late naps can hurt night sleep.</div></div></li>
+<li class="step-item"><span class="num">6</span><div><div class="s-title">Avoid all-nighters</div><div class="s-desc">Studying on little sleep is less effective than sleeping and revising, because sleep helps consolidate what you learned.</div></div></li>
+</ul></div>
+
+<div class="sec-title">3. Studying 8+ hours without wrecking your body</div>
+<div class="card"><ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Break up sitting every 30–60 minutes</div><div class="s-desc">Stand, walk or do 10 squats for 2–5 minutes. Breaking long sitting improves blood sugar control and reduces stiffness. This counts toward your steps.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Set up your desk</div><div class="s-desc">Screen top at eye level, elbows about 90°, feet flat, back supported, laptop on a stand with a separate keyboard if possible. Keep chin level to protect your neck and jawline posture.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Rest your eyes (20-20-20)</div><div class="s-desc">Every 20 minutes look at something 20 feet (6 m) away for 20 seconds. Blink fully. Get your eyes tested if you have headaches or blurred vision.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Study methods that work</div><div class="s-desc">Active recall (test yourself instead of re-reading), spaced repetition (revisit topics after 1, 3, 7, 21 days), mixing problem types, and timed mock tests. Use 50/10 focus blocks if they suit you.</div></div></li>
+<li class="step-item"><span class="num">5</span><div><div class="s-title">Phone out of reach during blocks</div><div class="s-desc">Simply having the phone nearby reduces focus. Keep it in another room or on do-not-disturb.</div></div></li>
+</ul></div>
+
+<div class="sec-title">4. Stress and mental health during GATE prep</div>
+<div class="card"><ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Use what works: exercise, sleep, daylight, people</div><div class="s-desc">Regular exercise, enough sleep, time outdoors and contact with friends or family all reduce stress and anxiety.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Slow breathing, 5 minutes</div><div class="s-desc">Breathe in 4 seconds, out 6 seconds. It calms the body's stress response and helps before sleep or mock tests.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Schedule something enjoyable daily (30–60 min)</div><div class="s-desc">Music, a hobby, a call with a friend, a walk. Rest helps performance rather than costing study time.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Set realistic daily targets and track them</div><div class="s-desc">Plan topics, not hours. Finish a short list daily and review weekly.</div></div></li>
+<li class="step-item"><span class="num">5</span><div><div class="s-title">Ask for help early</div><div class="s-desc">If low mood, constant worry, panic, loss of interest or trouble sleeping lasts more than 2 weeks, talk to a trusted person or a counsellor. In India, Tele-MANAS is a free, 24×7 helpline: call 14416 (or 1-800-891-4416).</div></div></li>
+</ul></div>
+
+<div class="sec-title">5. Eating habits that make the plan easier</div>
+<div class="card"><ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Eat protein and vegetables first, eat slowly, no screens</div><div class="s-desc">It takes about 20 minutes for fullness signals to register. Distracted eating leads to eating more.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Keep trigger foods out of the house</div><div class="s-desc">Choosing in the store is easier than resisting at home. Keep roasted chana, fruit, nuts and sprouts in sight.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Plan one flexible meal a week</div><div class="s-desc">A planned treat in normal portions is easier to sustain than strict rules, and it prevents binge-and-guilt cycles. Keep it to one meal, not a whole day.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Alcohol and smoking</div><div class="s-desc">Best avoided. Alcohol adds empty calories, disturbs sleep and lowers testosterone. Smoking harms heart, lungs, skin and hair.</div></div></li>
+<li class="step-item"><span class="num">5</span><div><div class="s-title">Tea and coffee</div><div class="s-desc">Without sugar, and not within an hour of lunch and dinner (they reduce iron absorption).</div></div></li>
+</ul></div>
+
+<div class="sec-title">6. Testosterone: what actually works</div>
+<div class="card"><table class="ft">
+<tr><th>Helps</th><th>Notes</th></tr>
+<tr><td>Losing excess body fat</td><td>Obesity is linked to lower testosterone, and losing weight tends to raise it. This is the biggest factor for you</td></tr>
+<tr><td>Strength training</td><td>Supports hormone health and muscle; no special "testosterone exercise" exists</td></tr>
+<tr><td>7+ hours of sleep</td><td>Short sleep lowers testosterone</td></tr>
+<tr><td>Enough calories, protein and healthy fats</td><td>Very harsh dieting can lower it</td></tr>
+<tr><td>Correcting real deficiencies (vitamin D, zinc, B12)</td><td>Supplements help only if you are deficient</td></tr>
+<tr><td>Limiting alcohol, managing stress</td><td>High cortisol and alcohol both reduce it</td></tr>
+</table></div>
+<div class="warn">"Testosterone booster" supplements are mostly marketing. If you have persistent low energy, low sex drive or erectile problems, see a doctor for a morning blood test (total testosterone, repeated once) instead of guessing. Do not use steroids or unprescribed hormones.</div>
+
+<div class="sec-title">7. Health check-ups (BMI 33.8 makes these worthwhile)</div>
+<div class="card"><table class="ft">
+<tr><th>Test</th><th>Why</th></tr>
+<tr><td>Blood pressure</td><td>Weight raises risk; easy to track</td></tr>
+<tr><td>Fasting glucose or HbA1c</td><td>Screens for prediabetes and diabetes</td></tr>
+<tr><td>Lipid profile</td><td>Cholesterol and triglycerides</td></tr>
+<tr><td>Liver tests (SGPT/ALT)</td><td>Fatty liver is common with excess weight</td></tr>
+<tr><td>Thyroid (TSH)</td><td>Can affect weight, hair and energy</td></tr>
+<tr><td>CBC, ferritin, vitamin B12, vitamin D</td><td>Anaemia and the nutrient gaps discussed in this plan</td></tr>
+<tr><td>Dental check-up</td><td>Brush twice a day, floss daily</td></tr>
+</table></div>
+<p class="note">Do these once at the start and repeat in 6–12 months. Weight loss often improves all of them. Share results with a doctor.</p>
+
+<div class="sec-title">8. Grooming and posture (they change how you look right now)</div>
+<div class="card"><ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Posture</div><div class="s-desc">Shoulders back, chin level, ribs stacked over hips. Good posture makes you look taller and leaner at any weight.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Clothes that fit</div><div class="s-desc">Fit matters more than size. Well-fitted, darker, plain tops and straight trousers look sharper than loose or tight clothes.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Hair and beard styling</div><div class="s-desc">Cosmetic tips: a cut with some volume on top and shorter sides, and neat short stubble along the jaw, can make the jawline look sharper until fat loss does it for real.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Basic hygiene</div><div class="s-desc">Brush twice daily, clean nails, fresh clothes, daily shower after sweating.</div></div></li>
+</ul></div>
+
+<div class="sec-title">9. Weekly review (10 minutes every Sunday)</div>
+<div class="card"><table class="ft">
+<tr><th>Check</th><th>Question</th></tr>
+<tr><td>Weight and waist</td><td>Is the weekly average moving down 0.5–1 kg?</td></tr>
+<tr><td>Workouts</td><td>Did I complete 4 strength days and my steps? What progressed?</td></tr>
+<tr><td>Food</td><td>How many days did I hit protein and calorie targets?</td></tr>
+<tr><td>Sleep and energy</td><td>Average hours? Any afternoon crashes?</td></tr>
+<tr><td>Study</td><td>Did I finish my weekly topic list?</td></tr>
+<tr><td>Skin and hair</td><td>Photo, new breakouts, shedding</td></tr>
+<tr><td>One change for next week</td><td>Pick one small fix only</td></tr>
+</table></div>
+</div>
+
 <div id="water" class="section">
 <div class="tip">Target 4–4.5 L on gym days (about 3–3.5 L on rest days). Spread through the day; do not chug large amounts at once. If you have kidney, heart or other medical conditions, ask your doctor about your water limit.</div>
 <div class="sec-title">Hour-by-hour water plan</div>
@@ -883,6 +1261,46 @@ function so(meal,opt,el){
   el.parentElement.querySelectorAll('.otab').forEach(function(t){t.classList.remove('active');});
   el.classList.add('active');
 }
+
+function calcNums(){
+  var age=+document.getElementById('c_age').value,wt=+document.getElementById('c_wt').value,
+      ht=+document.getElementById('c_ht').value,goal=+document.getElementById('c_goal').value,
+      act=+document.getElementById('c_act').value,plan=+document.getElementById('c_plan').value;
+  var out=document.getElementById('c_out');
+  if(!(age>0&&wt>0&&ht>0&&goal>0&&plan>0)){out.innerHTML='Please fill all fields.';return;}
+  var bmr=10*wt+6.25*ht-5*age+5;
+  var maint=bmr*act;
+  var lo=Math.max(1700,Math.round((maint-800)/10)*10), hi=Math.round((maint-500)/10)*10;
+  var deficit=maint-plan, perWeek=deficit*7/7700;
+  var bmi=wt/Math.pow(ht/100,2);
+  var toLose=Math.max(0,wt-goal);
+  var pLo=Math.round(goal*1.4), pHi=Math.round(goal*1.6);
+  var msg='<strong>BMI:</strong> '+bmi.toFixed(1)+'<br><strong>Estimated maintenance:</strong> about '+Math.round(maint/10)*10+' kcal/day (resting use about '+Math.round(bmr/10)*10+')<br>'
+   +'<strong>Suggested intake for fat loss:</strong> '+lo+'–'+hi+' kcal/day<br>'
+   +'<strong>Protein target:</strong> about '+pLo+'–'+pHi+' g/day (1.4–1.6 g per kg of goal weight)<br>'
+   +'<strong>Your planned '+plan+' kcal:</strong> deficit about '+Math.round(deficit)+' kcal/day, roughly '+(perWeek>0?perWeek.toFixed(2):'0')+' kg/week<br>';
+  if(deficit<=0){msg+='<span style="color:#633806">This is at or above maintenance, so you would not lose weight.</span><br>';}
+  else if(perWeek>1){msg+='<span style="color:#72243E">This is faster than the recommended 0.5–1 kg/week. Eat a bit more to protect muscle, hair and energy.</span><br>';}
+  else if(perWeek<0.4){msg+='<span style="color:#633806">This is a slow pace. Fine if you prefer it, or lower intake by about 100–200 kcal.</span><br>';}
+  else {msg+='<span style="color:#085041">This is within the recommended pace.</span><br>';}
+  if(toLose>0&&perWeek>0){var w=Math.round(toLose/Math.min(perWeek,1));msg+='<strong>To lose '+toLose.toFixed(0)+' kg:</strong> roughly '+w+'+ weeks ('+Math.round(w/4.3)+'+ months). It takes longer than this simple math because your needs fall as you get lighter.';}
+  out.innerHTML=msg;
+}
+(function(){
+  try{
+    var boxes=document.querySelectorAll('.chk');
+    var today=new Date().toDateString();
+    var saved=JSON.parse(localStorage.getItem('krishna_chk')||'{}');
+    if(saved.d!==today){saved={d:today};}
+    boxes.forEach(function(b){
+      b.checked=!!saved[b.dataset.k];
+      b.addEventListener('change',function(){
+        saved[b.dataset.k]=b.checked;
+        try{localStorage.setItem('krishna_chk',JSON.stringify(saved));}catch(e){}
+      });
+    });
+  }catch(e){}
+})();
 </script>
 </body>
 </html>
