@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krishna's Master Transformation Plan</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f4f0; color: #1a1a1a; }
+.header { background: linear-gradient(135deg, #3C3489 0%, #534AB7 100%); color: white; padding: 24px 20px 20px; }
+.header h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.header p { font-size: 13px; opacity: 0.85; margin-bottom: 14px; }
+.stat-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.stat-box { background: rgba(255,255,255,0.15); border-radius: 10px; padding: 9px 13px; min-width: 90px; }
+.stat-box .sl { font-size: 10px; opacity: 0.8; margin-bottom: 2px; }
+.stat-box .sv { font-size: 16px; font-weight: 700; }
+.tabs { display: flex; gap: 0; overflow-x: auto; background: #fff; border-bottom: 1px solid #e0e0d8; padding: 0 12px; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { padding: 12px 13px; font-size: 12px; color: #666; cursor: pointer; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.15s; flex-shrink: 0; font-weight: 500; }
+.tab.active { color: #3C3489; border-bottom-color: #3C3489; font-weight: 700; }
+.content { padding: 16px; max-width: 800px; margin: 0 auto; }
+.section { display: none; }
+.section.active { display: block; }
+.tip { background: #E1F5EE; border-left: 3px solid #1D9E75; padding: 11px 13px; border-radius: 0 8px 8px 0; margin-bottom: 12px; font-size: 13px; color: #085041; line-height: 1.6; }
+.warn { background: #FAEEDA; border-left: 3px solid #EF9F27; padding: 11px 13px; border-radius: 0 8px 8px 0; margin-bottom: 12px; font-size: 13px; color: #633806; line-height: 1.6; }
+.alert { background: #FBEAF0; border-left: 3px solid #D4537E; padding: 11px 13px; border-radius: 0 8px 8px 0; margin-bottom: 12px; font-size: 13px; color: #72243E; line-height: 1.6; }
+.card { background: #fff; border: 1px solid #e8e8e4; border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+.card h3 { font-size: 14px; font-weight: 700; margin-bottom: 10px; color: #1a1a1a; }
+.sec-title { font-size: 15px; font-weight: 700; margin: 18px 0 10px; color: #3C3489; }
+.badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 6px; font-weight: 700; margin-left: 5px; vertical-align: middle; }
+.bp { background: #EEEDFE; color: #3C3489; }
+.bg { background: #E1F5EE; color: #085041; }
+.ba { background: #FAEEDA; color: #633806; }
+.br { background: #FBEAF0; color: #72243E; }
+.step-list { list-style: none; }
+.step-item { font-size: 13px; padding: 8px 0; border-bottom: 1px solid #f0f0ec; display: flex; gap: 10px; line-height: 1.5; }
+.step-item:last-child { border-bottom: none; }
+.num { background: #EEEDFE; color: #3C3489; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.s-title { font-weight: 700; margin-bottom: 2px; font-size: 13px; }
+.s-desc { color: #555; font-size: 12px; line-height: 1.6; }
+.day-card { background: #fff; border: 1px solid #e8e8e4; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; }
+.ex-list { list-style: none; }
+.ex-item { font-size: 13px; padding: 6px 0; border-bottom: 1px solid #f5f5f2; display: flex; gap: 8px; line-height: 1.5; }
+.ex-item:last-child { border-bottom: none; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: #7F77DD; margin-top: 6px; flex-shrink: 0; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.mini-card { background: #fff; border: 1px solid #e8e8e4; border-radius: 10px; padding: 12px; }
+.mini-card .ml { font-size: 11px; color: #888; margin-bottom: 4px; font-weight: 600; }
+.mini-card .mv { font-size: 15px; line-height: 1.6; color: #333; font-weight: 700; }
+.time-line { position: relative; padding-left: 14px; border-left: 2px solid #e0e0d8; }
+.trow { display: flex; gap: 12px; margin-bottom: 8px; position: relative; }
+.trow::before { content:''; position: absolute; left: -19px; top: 12px; width: 8px; height: 8px; border-radius: 50%; background: var(--dc, #888); }
+.t-time { font-size: 11px; color: #888; min-width: 78px; padding-top: 10px; font-weight: 700; }
+.t-card { flex: 1; background: #fff; border: 1px solid #e8e8e4; border-radius: 10px; padding: 9px 13px; }
+.t-card.gym { border-left: 3px solid #7F77DD; border-radius: 0 10px 10px 0; }
+.t-card.study { border-left: 3px solid #1D9E75; border-radius: 0 10px 10px 0; }
+.t-card.food { border-left: 3px solid #EF9F27; border-radius: 0 10px 10px 0; }
+.t-card.sleep { border-left: 3px solid #378ADD; border-radius: 0 10px 10px 0; }
+.t-card.rest { border-left: 3px solid #D4537E; border-radius: 0 10px 10px 0; }
+.t-title { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+.t-desc { font-size: 12px; color: #666; line-height: 1.5; }
+.supp-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 12px; }
+.supp-card { background: #fff; border: 1px solid #e8e8e4; border-radius: 10px; padding: 12px; }
+.supp-card .sn { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+.supp-card .sd { font-size: 11px; color: #666; line-height: 1.5; }
+.supp-card .si { font-size: 11px; color: #3C3489; font-weight: 700; margin-top: 5px; }
+.food-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.food-table th { background: #EEEDFE; color: #3C3489; padding: 8px 10px; text-align: left; font-weight: 700; }
+.food-table td { padding: 7px 10px; border-bottom: 1px solid #f0f0ec; vertical-align: top; line-height: 1.5; }
+.food-table tr:last-child td { border-bottom: none; }
+.water-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin-bottom: 12px; }
+.water-card { background: #E6F1FB; border-radius: 10px; padding: 10px 12px; }
+.water-card .wt { font-size: 11px; color: #185FA5; font-weight: 700; margin-bottom: 3px; }
+.water-card .wd { font-size: 12px; color: #1a1a1a; line-height: 1.5; }
+.wk-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 14px; }
+.wk-card { background: #fff; border: 1px solid #e8e8e4; border-radius: 10px; padding: 12px; }
+.wk-card .wkl { font-size: 11px; color: #888; font-weight: 700; margin-bottom: 5px; }
+.wk-card .wkt { font-size: 12px; line-height: 1.6; color: #444; }
+/* MEAL OPTIONS */
+.meal-section { margin-bottom: 18px; }
+.meal-header { background: linear-gradient(135deg, #3C3489, #534AB7); color: white; padding: 10px 14px; border-radius: 10px 10px 0 0; font-size: 14px; font-weight: 700; }
+.meal-time { font-size: 11px; opacity: 0.85; margin-top: 2px; }
+.options-tabs { display: flex; background: #EEEDFE; }
+.opt-tab { flex: 1; padding: 8px 6px; font-size: 12px; text-align: center; cursor: pointer; color: #3C3489; font-weight: 600; border-bottom: 2px solid transparent; transition: all 0.15s; }
+.opt-tab.active { background: #fff; border-bottom-color: #3C3489; }
+.option-panel { display: none; background: #fff; border: 1px solid #e8e8e4; border-top: none; border-radius: 0 0 10px 10px; padding: 12px 14px; }
+.option-panel.active { display: block; }
+.item-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid #f5f5f2; font-size: 13px; gap: 8px; }
+.item-row:last-child { border-bottom: none; }
+.item-name { flex: 1; }
+.item-name .qty { font-size: 11px; color: #888; }
+.item-macros { text-align: right; flex-shrink: 0; }
+.item-macros .cal { font-size: 12px; font-weight: 700; color: #3C3489; }
+.item-macros .pro { font-size: 11px; color: #1D9E75; }
+.meal-total { background: #f9f9f7; border-top: 2px solid #EEEDFE; padding: 8px 14px; border-radius: 0 0 10px 10px; display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; }
+.meal-total span { color: #3C3489; }
+.meal-total .pt { color: #1D9E75; }
+.note { font-size: 11px; color: #888; font-style: italic; padding: 6px 0 0; line-height: 1.5; }
+.day-badge { display: inline-block; font-size: 10px; padding: 3px 9px; border-radius: 6px; font-weight: 700; margin-left: 8px; }
+.db-str { background: #EEEDFE; color: #3C3489; }
+.db-card { background: #E1F5EE; color: #085041; }
+.db-rest { background: #F1EFE8; color: #444; }
+.db-mix { background: #FAEEDA; color: #633806; }
+.prot-bar { background: #fff; border: 1px solid #e8e8e4; border-radius: 10px; padding: 14px; margin-bottom: 12px; }
+.prot-bar h4 { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+.prot-item { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 12px; }
+.prot-label { min-width: 140px; }
+.prot-track { flex: 1; height: 8px; background: #f0f0ec; border-radius: 4px; overflow: hidden; }
+.prot-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #3C3489, #7F77DD); }
+.prot-val { min-width: 40px; text-align: right; color: #3C3489; font-weight: 700; }
+@media(max-width:500px){ .grid2{grid-template-columns:1fr;} }
+
+.ft{width:100%;border-collapse:collapse;font-size:12px;}
+.ft th{background:#EEEDFE;color:#3C3489;padding:8px 10px;text-align:left;font-weight:700;}
+.ft td{padding:7px 10px;border-bottom:1px solid #f0f0ec;vertical-align:top;line-height:1.5;}
+.ft tr:last-child td{border-bottom:none;}
+.card{overflow-x:auto;}
+.supp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:12px;}
+.supp-card .si{border-top:1px solid #f0f0ec;padding-top:5px;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(138px,1fr));gap:8px;margin-bottom:12px;}
+.wcard{background:#E6F1FB;border-radius:10px;padding:10px 12px;}
+.wcard .wt{font-size:11px;color:#185FA5;font-weight:700;margin-bottom:3px;}
+.wcard .wd{font-size:12px;color:#1a1a1a;line-height:1.5;}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px;}
+.mcard{background:#fff;border:1px solid #e8e8e4;border-radius:10px;padding:12px;}
+.mcard .ml{font-size:11px;color:#888;font-weight:700;margin-bottom:5px;}
+.mcard .mt{font-size:12px;line-height:1.6;color:#444;}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:12px;}
+.highlight{background:#EEEDFE;border-radius:8px;padding:10px 12px;margin-bottom:8px;font-size:13px;}
+.highlight strong{color:#3C3489;}
+.sec-title{border-bottom:2px solid #EEEDFE;padding-bottom:6px;}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Krishna's Master Transformation Plan</h1>
+  <p>Pure Veg · No Eggs · No Curd · No Tofu · Buffalo Milk ✓ · Natural Protein Only · GATE CSE · Gym 8 PM</p>
+  <div class="stat-row">
+    <div class="stat-box"><div class="sl">Weight</div><div class="sv">104 kg</div></div>
+    <div class="stat-box"><div class="sl">Height</div><div class="sv">5'9"</div></div>
+    <div class="stat-box"><div class="sl">BMI</div><div class="sv">33.8</div></div>
+    <div class="stat-box"><div class="sl">Target</div><div class="sv">75–80 kg</div></div>
+    <div class="stat-box"><div class="sl">Timeline</div><div class="sv">6–8 months</div></div>
+    <div class="stat-box"><div class="sl">Calories/day</div><div class="sv">~1900 kcal</div></div>
+    <div class="stat-box"><div class="sl">Protein/day</div><div class="sv">110–120g</div></div>
+  </div>
+</div>
+<div class="tabs">
+  <div class="tab active" onclick="sw('diet',this)">🍽 Diet & Meals</div>
+  <div class="tab" onclick="sw('protein',this)">💪 Protein Sources</div>
+  <div class="tab" onclick="sw('gym',this)">🏋 Gym Plan</div>
+  <div class="tab" onclick="sw('cardio',this)">🏃 Cardio Guide</div>
+  <div class="tab" onclick="sw('timetable',this)">⏰ Daily Schedule</div>
+  <div class="tab" onclick="sw('deficiency',this)">🧬 Deficiencies</div>
+  <div class="tab" onclick="sw('supplements',this)">💊 Supplements</div>
+  <div class="tab" onclick="sw('hair',this)">🌿 Hair Plan</div>
+  <div class="tab" onclick="sw('face',this)">✨ Face & Jawline</div>
+  <div class="tab" onclick="sw('skin',this)">🌟 Skin</div>
+  <div class="tab" onclick="sw('water',this)">💧 Water</div>
+  <div class="tab" onclick="sw('progress',this)">📈 Progress</div>
+</div>
+<div class="content">
+<div id="diet" class="section active">
+
+  <div class="tip">You have buffalo milk (boiled, no malai) — excellent! Buffalo milk without cream is still 3.5–4% fat and gives ~5g protein per 200ml. All meals below use only what you have access to. Each meal has 3 options — pick any one daily.</div>
+
+  <div class="grid2">
+    <div class="mini-card"><div class="ml">Daily calorie target</div><div class="mv" style="color:#3C3489">1850–1950 kcal</div></div>
+    <div class="mini-card"><div class="ml">Protein target</div><div class="mv" style="color:#1D9E75">110–120 g/day</div></div>
+    <div class="mini-card"><div class="ml">Carbs (complex only)</div><div class="mv">180–200 g</div></div>
+    <div class="mini-card"><div class="ml">Fat (healthy)</div><div class="mv">45–55 g</div></div>
+  </div>
+
+  <div class="alert">No sugar, no maida, no cold drinks, no fried food, no white rice at dinner. This is the single most important rule for fast fat loss.</div>
+
+  <!-- MEAL 1 -->
+  <div class="meal-section">
+    <div class="meal-header">🌅 Meal 1 — Morning (6:00 AM) — Empty stomach<div class="meal-time">Have this immediately on waking up — before anything else</div></div>
+    <div class="options-tabs">
+      <div class="opt-tab active" onclick="so('m1','A',this)">Option A</div>
+      <div class="opt-tab" onclick="so('m1','B',this)">Option B</div>
+      <div class="opt-tab" onclick="so('m1','C',this)">Option C</div>
+    </div>
+    <div id="m1A" class="option-panel active">
+      <div class="item-row"><div class="item-name">Warm water + lemon juice<div class="qty">300 ml warm water + juice of ½ lemon</div></div><div class="item-macros"><div class="cal">5 kcal</div><div class="pro">0g protein</div></div></div>
+      <div class="item-row"><div class="item-name">Soaked almonds<div class="qty">7–8 almonds (soaked overnight, peel off skin)</div></div><div class="item-macros"><div class="cal">55 kcal</div><div class="pro">2g protein</div></div></div>
+      <div class="item-row"><div class="item-name">Soaked walnuts<div class="qty">2 whole walnuts = 4 halves</div></div><div class="item-macros"><div class="cal">52 kcal</div><div class="pro">1g protein</div></div></div>
+      <p class="note">Best for: Digestion boost, Omega-3 start, Vitamin E. Drink water first always.</p>
+    </div>
+    <div id="m1B" class="option-panel">
+      <div class="item-row"><div class="item-name">Warm water with soaked methi seeds<div class="qty">1 glass warm water + 1 tsp methi soaked overnight</div></div><div class="item-macros"><div class="cal">15 kcal</div><div class="pro">0g</div></div></div>
+      <div class="item-row"><div class="item-name">Soaked almonds + peanuts<div class="qty">5 almonds + 1 tbsp peanuts</div></div><div class="item-macros"><div class="cal">95 kcal</div><div class="pro">4g</div></div></div>
+      <p class="note">Best for: Blood sugar control, metabolism boost, reduces hunger until breakfast.</p>
+    </div>
+    <div id="m1C" class="option-panel">
+      <div class="item-row"><div class="item-name">Amla juice or raw amla<div class="qty">1 raw amla OR 30 ml amla juice in water</div></div><div class="item-macros"><div class="cal">10 kcal</div><div class="pro">0g</div></div></div>
+      <div class="item-row"><div class="item-name">Soaked almonds<div class="qty">6–7 almonds</div></div><div class="item-macros"><div class="cal">50 kcal</div><div class="pro">2g</div></div></div>
+      <p class="note">Best for: Vitamin C boost (helps iron absorption from food), hair and skin health, immunity.</p>
+    </div>
+    <div class="meal-total"><span>~60–110 kcal</span><span class="pt">~1–4g protein</span></div>
+  </div>
+
+  <!-- MEAL 2 BREAKFAST -->
+  <div class="meal-section">
+    <div class="meal-header">🍳 Meal 2 — Breakfast (9:00–9:30 AM) — Biggest meal of the day<div class="meal-time">Eat within 30 min of waking up from study. Most calories here = more energy to study.</div></div>
+    <div class="options-tabs">
+      <div class="opt-tab active" onclick="so('m2','A',this)">Option A</div>
+      <div class="opt-tab" onclick="so('m2','B',this)">Option B</div>
+      <div class="opt-tab" onclick="so('m2','C',this)">Option C</div>
+    </div>
+    <div id="m2A" class="option-panel active">
+      <div class="item-row"><div class="item-name">Pintola High Protein Muesli<div class="qty">50g (approx ½ cup) — measure on kitchen scale once</div></div><div class="item-macros"><div class="cal">190 kcal</div><div class="pro">10g</div></div></div>
+      <div class="item-row"><div class="item-name">Buffalo milk (boiled, no malai)<div class="qty">250 ml — pour over muesli or drink alongside</div></div><div class="item-macros"><div class="cal">155 kcal</div><div class="pro">6g</div></div></div>
+      <div class="item-row"><div class="item-name">Paneer (roasted in ½ tsp oil, coated in besan + salt + jeera)<div class="qty">80–90g paneer — roughly 4–5 cubes</div></div><div class="item-macros"><div class="cal">215 kcal</div><div class="pro">17g</div></div></div>
+      <div class="item-row"><div class="item-name">Cucumber + tomato salad + sprouts<div class="qty">½ cup each, squeeze lemon on top</div></div><div class="item-macros"><div class="cal">55 kcal</div><div class="pro">4g</div></div></div>
+      <div class="meal-total"><span>615 kcal</span><span class="pt">37g protein</span></div>
+    </div>
+    <div id="m2B" class="option-panel">
+      <div class="item-row"><div class="item-name">Besan chilla (2 medium)<div class="qty">60g besan + chopped onion, tomato, green chilli, salt. Cook in ½ tsp oil.</div></div><div class="item-macros"><div class="cal">240 kcal</div><div class="pro">13g</div></div></div>
+      <div class="item-row"><div class="item-name">Buffalo milk with Complan (chocolate, 1 tsp only)<div class="qty">250 ml milk + 1 tsp Complan — no more than 1 tsp (reduces sugar)</div></div><div class="item-macros"><div class="cal">160 kcal</div><div class="pro">6g</div></div></div>
+      <div class="item-row"><div class="item-name">Moong dal sprouts chaat<div class="qty">½ cup sprouted moong + chopped onion, tomato, lemon, salt, chilli</div></div><div class="item-macros"><div class="cal">70 kcal</div><div class="pro">5g</div></div></div>
+      <div class="item-row"><div class="item-name">Peanut chutney (with chilla)<div class="qty">2 tbsp ground peanuts + water + salt</div></div><div class="item-macros"><div class="cal">110 kcal</div><div class="pro">5g</div></div></div>
+      <div class="meal-total"><span>580 kcal</span><span class="pt">29g protein</span></div>
+    </div>
+    <div id="m2C" class="option-panel">
+      <div class="item-row"><div class="item-name">Moong dal chilla (2 medium)<div class="qty">Soak moong dal 4 hrs, grind, make thin pancakes with ½ tsp oil</div></div><div class="item-macros"><div class="cal">220 kcal</div><div class="pro">14g</div></div></div>
+      <div class="item-row"><div class="item-name">Paneer bhurji (no oil, dry roasted)<div class="qty">60g paneer crumbled, with tomato, onion, green chilli, turmeric</div></div><div class="item-macros"><div class="cal">165 kcal</div><div class="pro">13g</div></div></div>
+      <div class="item-row"><div class="item-name">Buffalo milk<div class="qty">200 ml, boiled, no malai</div></div><div class="item-macros"><div class="cal">125 kcal</div><div class="pro">5g</div></div></div>
+      <div class="item-row"><div class="item-name">Cucumber slices with sprouts<div class="qty">1 cucumber sliced + 2 tbsp sprouts + lemon</div></div><div class="item-macros"><div class="cal">40 kcal</div><div class="pro">3g</div></div></div>
+      <div class="meal-total"><span>550 kcal</span><span class="pt">35g protein</span></div>
+    </div>
+  </div>
+
+  <!-- MEAL 3 LUNCH -->
+  <div class="meal-section">
+    <div class="meal-header">🌿 Meal 3 — Lunch (1:00–1:30 PM)<div class="meal-time">Second largest meal. Moderate carbs. Must have dal or legume for protein.</div></div>
+    <div class="options-tabs">
+      <div class="opt-tab active" onclick="so('m3','A',this)">Option A</div>
+      <div class="opt-tab" onclick="so('m3','B',this)">Option B</div>
+      <div class="opt-tab" onclick="so('m3','C',this)">Option C</div>
+    </div>
+    <div id="m3A" class="option-panel active">
+      <div class="item-row"><div class="item-name">Wheat chapati<div class="qty">2 medium chapati (no ghee or butter)</div></div><div class="item-macros"><div class="cal">200 kcal</div><div class="pro">6g</div></div></div>
+      <div class="item-row"><div class="item-name">Chana dal (thick, home made)<div class="qty">1.5 cups cooked — this is your main protein source</div></div><div class="item-macros"><div class="cal">180 kcal</div><div class="pro">14g</div></div></div>
+      <div class="item-row"><div class="item-name">Any dry sabzi (minimum oil — ½ tsp)<div class="qty">1 cup — aloo gobi, lauki, tinda, bhindi, etc.</div></div><div class="item-macros"><div class="cal">80 kcal</div><div class="pro">2g</div></div></div>
+      <div class="item-row"><div class="item-name">Sprouts + cucumber + tomato salad<div class="qty">½ cup sprouts + 1 cucumber + 1 tomato + lemon</div></div><div class="item-macros"><div class="cal">60 kcal</div><div class="pro">4g</div></div></div>
+      <div class="meal-total"><span>520 kcal</span><span class="pt">26g protein</span></div>
+    </div>
+    <div id="m3B" class="option-panel">
+      <div class="item-row"><div class="item-name">Jowar / Bajra roti (2 medium)<div class="qty">Better than wheat for fat loss — lower GI, more minerals</div></div><div class="item-macros"><div class="cal">190 kcal</div><div class="pro">5g</div></div></div>
+      <div class="item-row"><div class="item-name">Rajma curry (thick, less oil)<div class="qty">1.5 cups cooked rajma — highest plant protein legume</div></div><div class="item-macros"><div class="cal">195 kcal</div><div class="pro">13g</div></div></div>
+      <div class="item-row"><div class="item-name">Palak sabzi (dry)<div class="qty">1 cup cooked — iron + magnesium</div></div><div class="item-macros"><div class="cal">50 kcal</div><div class="pro">3g</div></div></div>
+      <div class="item-row"><div class="item-name">Sprouts chaat<div class="qty">½ cup moong sprouts + onion + lemon</div></div><div class="item-macros"><div class="cal">55 kcal</div><div class="pro">4g</div></div></div>
+      <div class="meal-total"><span>490 kcal</span><span class="pt">25g protein</span></div>
+    </div>
+    <div id="m3C" class="option-panel">
+      <div class="item-row"><div class="item-name">Brown rice (if available) OR 2 wheat chapati<div class="qty">½ cup cooked brown rice or 2 chapati</div></div><div class="item-macros"><div class="cal">165 kcal</div><div class="pro">4g</div></div></div>
+      <div class="item-row"><div class="item-name">Moong dal (yellow, thick)<div class="qty">1.5 cups cooked</div></div><div class="item-macros"><div class="cal">155 kcal</div><div class="pro">12g</div></div></div>
+      <div class="item-row"><div class="item-name">Paneer sabzi (50g paneer in any dry sabzi)<div class="qty">50g cubed paneer in bhindi / capsicum</div></div><div class="item-macros"><div class="cal">150 kcal</div><div class="pro">10g</div></div></div>
+      <div class="item-row"><div class="item-name">Salad (cucumber, tomato, onion, lemon)<div class="qty">1 bowl</div></div><div class="item-macros"><div class="cal">35 kcal</div><div class="pro">1g</div></div></div>
+      <div class="meal-total"><span>505 kcal</span><span class="pt">27g protein</span></div>
+    </div>
+  </div>
+
+  <!-- MEAL 4 SNACK -->
+  <div class="meal-section">
+    <div class="meal-header">🥜 Meal 4 — Evening Snack (4:00–4:30 PM)<div class="meal-time">Study break snack. High protein, low calorie. No fried items.</div></div>
+    <div class="options-tabs">
+      <div class="opt-tab active" onclick="so('m4','A',this)">Option A</div>
+      <div class="opt-tab" onclick="so('m4','B',this)">Option B</div>
+      <div class="opt-tab" onclick="so('m4','C',this)">Option C</div>
+    </div>
+    <div id="m4A" class="option-panel active">
+      <div class="item-row"><div class="item-name">Roasted chana (unsalted)<div class="qty">40g = small fistful — best high-protein snack</div></div><div class="item-macros"><div class="cal">140 kcal</div><div class="pro">9g</div></div></div>
+      <div class="item-row"><div class="item-name">Peanuts (roasted, unsalted)<div class="qty">20g = about 18–20 peanuts</div></div><div class="item-macros"><div class="cal">110 kcal</div><div class="pro">5g</div></div></div>
+      <div class="item-row"><div class="item-name">Green tea (no sugar)<div class="qty">1 cup</div></div><div class="item-macros"><div class="cal">0 kcal</div><div class="pro">—</div></div></div>
+      <div class="meal-total"><span>250 kcal</span><span class="pt">14g protein</span></div>
+    </div>
+    <div id="m4B" class="option-panel">
+      <div class="item-row"><div class="item-name">Besan chilla (1 small) with chutney<div class="qty">30g besan — quick to make</div></div><div class="item-macros"><div class="cal">135 kcal</div><div class="pro">7g</div></div></div>
+      <div class="item-row"><div class="item-name">Buffalo milk (small glass)<div class="qty">150 ml boiled, no malai</div></div><div class="item-macros"><div class="cal">95 kcal</div><div class="pro">4g</div></div></div>
+      <div class="meal-total"><span>230 kcal</span><span class="pt">11g protein</span></div>
+    </div>
+    <div id="m4C" class="option-panel">
+      <div class="item-row"><div class="item-name">Moong sprouts chaat<div class="qty">¾ cup sprouted moong + lemon + salt + chilli + onion</div></div><div class="item-macros"><div class="cal">90 kcal</div><div class="pro">7g</div></div></div>
+      <div class="item-row"><div class="item-name">Roasted pumpkin seeds (if available)<div class="qty">20g — zinc + magnesium powerhouse</div></div><div class="item-macros"><div class="cal">110 kcal</div><div class="pro">5g</div></div></div>
+      <div class="item-row"><div class="item-name">Peanuts<div class="qty">15g</div></div><div class="item-macros"><div class="cal">85 kcal</div><div class="pro">4g</div></div></div>
+      <div class="meal-total"><span>285 kcal</span><span class="pt">16g protein</span></div>
+    </div>
+  </div>
+
+  <!-- MEAL 5 PRE GYM -->
+  <div class="meal-section">
+    <div class="meal-header">💪 Meal 5 — Pre-Gym (7:00–7:30 PM) — 1 hour before gym<div class="meal-time">Light meal. Easy carbs for energy. Not too heavy or you'll feel sick during workout.</div></div>
+    <div class="options-tabs">
+      <div class="opt-tab active" onclick="so('m5','A',this)">Option A</div>
+      <div class="opt-tab" onclick="so('m5','B',this)">Option B</div>
+      <div class="opt-tab" onclick="so('m5','C',this)">Option C</div>
+    </div>
+    <div id="m5A" class="option-panel active">
+      <div class="item-row"><div class="item-name">Banana<div class="qty">1 medium — fast carbs for gym energy</div></div><div class="item-macros"><div class="cal">90 kcal</div><div class="pro">1g</div></div></div>
+      <div class="item-row"><div class="item-name">Peanut butter (natural, no sugar)<div class="qty">1 tbsp — slow energy, healthy fat</div></div><div class="item-macros"><div class="cal">95 kcal</div><div class="pro">4g</div></div></div>
+      <div class="meal-total"><span>185 kcal</span><span class="pt">5g protein</span></div>
+    </div>
+    <div id="m5B" class="option-panel">
+      <div class="item-row"><div class="item-name">2 wheat chapati with peanut butter<div class="qty">2 small chapati + 1 tbsp peanut butter</div></div><div class="item-macros"><div class="cal">295 kcal</div><div class="pro">10g</div></div></div>
+      <div class="meal-total"><span>295 kcal</span><span class="pt">10g protein</span></div>
+    </div>
+    <div id="m5C" class="option-panel">
+      <div class="item-row"><div class="item-name">Roasted chana<div class="qty">30g</div></div><div class="item-macros"><div class="cal">105 kcal</div><div class="pro">7g</div></div></div>
+      <div class="item-row"><div class="item-name">Banana<div class="qty">1 medium</div></div><div class="item-macros"><div class="cal">90 kcal</div><div class="pro">1g</div></div></div>
+      <div class="meal-total"><span>195 kcal</span><span class="pt">8g protein</span></div>
+    </div>
+  </div>
+
+  <!-- MEAL 6 POST GYM DINNER -->
+  <div class="meal-section">
+    <div class="meal-header">🌙 Meal 6 — Post-Gym Dinner (9:30–10:00 PM) — Within 45 min of gym<div class="meal-time">High protein, LOW carbs. No rice. No heavy chapati. Light but protein-rich.</div></div>
+    <div class="options-tabs">
+      <div class="opt-tab active" onclick="so('m6','A',this)">Option A</div>
+      <div class="opt-tab" onclick="so('m6','B',this)">Option B</div>
+      <div class="opt-tab" onclick="so('m6','C',this)">Option C</div>
+    </div>
+    <div id="m6A" class="option-panel active">
+      <div class="item-row"><div class="item-name">Paneer bhurji (semi-dry)<div class="qty">100g paneer crumbled + tomato + onion + ½ tsp oil + spices</div></div><div class="item-macros"><div class="cal">265 kcal</div><div class="pro">21g</div></div></div>
+      <div class="item-row"><div class="item-name">1 wheat chapati only<div class="qty">1 medium chapati — to carry the bhurji</div></div><div class="item-macros"><div class="cal">100 kcal</div><div class="pro">3g</div></div></div>
+      <div class="item-row"><div class="item-name">Moong dal soup (thin)<div class="qty">1 cup thin dal — light on stomach before sleep</div></div><div class="item-macros"><div class="cal">80 kcal</div><div class="pro">6g</div></div></div>
+      <div class="meal-total"><span>445 kcal</span><span class="pt">30g protein</span></div>
+    </div>
+    <div id="m6B" class="option-panel">
+      <div class="item-row"><div class="item-name">Moong dal khichdi (no rice — mung only)<div class="qty">1.5 cups thick moong dal cooked with jeera, turmeric, minimal oil</div></div><div class="item-macros"><div class="cal">200 kcal</div><div class="pro">14g</div></div></div>
+      <div class="item-row"><div class="item-name">Paneer cubes (plain roasted)<div class="qty">80g paneer — plain pan roasted with salt and turmeric</div></div><div class="item-macros"><div class="cal">215 kcal</div><div class="pro">17g</div></div></div>
+      <div class="meal-total"><span>415 kcal</span><span class="pt">31g protein</span></div>
+    </div>
+    <div id="m6C" class="option-panel">
+      <div class="item-row"><div class="item-name">Buffalo milk (warm, no malai, no sugar)<div class="qty">300 ml — slow-digesting casein protein for overnight recovery</div></div><div class="item-macros"><div class="cal">185 kcal</div><div class="pro">7g</div></div></div>
+      <div class="item-row"><div class="item-name">Chana dal (thick, 1 cup) with 1 chapati<div class="qty">1 cup + 1 chapati only</div></div><div class="item-macros"><div class="cal">280 kcal</div><div class="pro">14g</div></div></div>
+      <div class="item-row"><div class="item-name">Sprouts (½ cup raw with lemon)<div class="qty">Light, high protein, easy to digest</div></div><div class="item-macros"><div class="cal">55 kcal</div><div class="pro">4g</div></div></div>
+      <div class="meal-total"><span>520 kcal</span><span class="pt">25g protein</span></div>
+    </div>
+  </div>
+
+  <!-- DAY TOTAL -->
+  <div class="card">
+    <h3>📊 Day total (approximate, varies by option chosen)</h3>
+    <table class="food-table">
+      <tr><th>Meal</th><th>Calories</th><th>Protein</th></tr>
+      <tr><td>Morning (6 AM)</td><td>60–110 kcal</td><td>1–4g</td></tr>
+      <tr><td>Breakfast (9 AM)</td><td>550–620 kcal</td><td>29–37g</td></tr>
+      <tr><td>Lunch (1 PM)</td><td>490–520 kcal</td><td>25–27g</td></tr>
+      <tr><td>Snack (4 PM)</td><td>230–285 kcal</td><td>11–16g</td></tr>
+      <tr><td>Pre-gym (7 PM)</td><td>185–295 kcal</td><td>5–10g</td></tr>
+      <tr><td>Post-gym dinner (9:30 PM)</td><td>415–520 kcal</td><td>25–31g</td></tr>
+      <tr><td><strong>TOTAL</strong></td><td><strong>~1900–1950 kcal</strong></td><td><strong>~110–120g</strong></td></tr>
+    </table>
+    <p class="note" style="margin-top:8px">This is a 500–700 kcal daily deficit for your weight and activity level = ~0.8–1.2 kg fat loss per week safely.</p>
+  </div>
+
+  <div class="sec-title">No sugar diet — complete guide</div>
+  <div class="card">
+    <table class="food-table">
+      <tr><th>AVOID completely</th><th>REPLACE with</th></tr>
+      <tr><td>Sugar in tea/coffee/milk</td><td>No sweetener, or 1 date if craving is strong</td></tr>
+      <tr><td>Complan (chocolate) more than 1 tsp</td><td>Keep to 1 tsp only — it has added sugar</td></tr>
+      <tr><td>Biscuits, namkeen, packaged snacks</td><td>Roasted chana, peanuts, sprouts</td></tr>
+      <tr><td>Cold drinks, packaged juice, lassi with sugar</td><td>Nimbu pani (no sugar), coconut water, green tea</td></tr>
+      <tr><td>White rice (especially at dinner)</td><td>Chapati (2 max at lunch), khichdi at night</td></tr>
+      <tr><td>Maida (paratha, puri, naan)</td><td>Jowar/bajra roti, besan chilla</td></tr>
+      <tr><td>Fried snacks, samosa, pakoda</td><td>Paneer bhurji, chana, sprouts chaat</td></tr>
+    </table>
+  </div>
+</div>
+
+
+<div id="protein" class="section">
+  <div class="tip">No eggs, no curd, no tofu, no protein powder — but you CAN still hit 110–120g protein daily with these veg sources. The key is combining multiple sources at every meal.</div>
+
+  <div class="prot-bar">
+    <h4>Natural protein content of YOUR available foods</h4>
+    <div class="prot-item"><span class="prot-label">Paneer (100g)</span><div class="prot-track"><div class="prot-fill" style="width:85%"></div></div><span class="prot-val">18g</span></div>
+    <div class="prot-item"><span class="prot-label">Chana dal (1 cup cooked)</span><div class="prot-track"><div class="prot-fill" style="width:75%"></div></div><span class="prot-val">16g</span></div>
+    <div class="prot-item"><span class="prot-label">Rajma (1 cup cooked)</span><div class="prot-track"><div class="prot-fill" style="width:70%"></div></div><span class="prot-val">15g</span></div>
+    <div class="prot-item"><span class="prot-label">Moong dal (1 cup cooked)</span><div class="prot-track"><div class="prot-fill" style="width:62%"></div></div><span class="prot-val">13g</span></div>
+    <div class="prot-item"><span class="prot-label">Roasted chana (40g)</span><div class="prot-track"><div class="prot-fill" style="width:43%"></div></div><span class="prot-val">9g</span></div>
+    <div class="prot-item"><span class="prot-label">Moong sprouts (½ cup)</span><div class="prot-track"><div class="prot-fill" style="width:38%"></div></div><span class="prot-val">8g</span></div>
+    <div class="prot-item"><span class="prot-label">Peanuts (30g)</span><div class="prot-track"><div class="prot-fill" style="width:35%"></div></div><span class="prot-val">7g</span></div>
+    <div class="prot-item"><span class="prot-label">Besan chilla (2 medium)</span><div class="prot-track"><div class="prot-fill" style="width:62%"></div></div><span class="prot-val">13g</span></div>
+    <div class="prot-item"><span class="prot-label">Buffalo milk (250ml, no malai)</span><div class="prot-track"><div class="prot-fill" style="width:28%"></div></div><span class="prot-val">6g</span></div>
+    <div class="prot-item"><span class="prot-label">Pintola Muesli (50g)</span><div class="prot-track"><div class="prot-fill" style="width:47%"></div></div><span class="prot-val">10g</span></div>
+    <div class="prot-item"><span class="prot-label">Peanut butter (2 tbsp)</span><div class="prot-track"><div class="prot-fill" style="width:35%"></div></div><span class="prot-val">8g</span></div>
+    <div class="prot-item"><span class="prot-label">Chana sprouts (½ cup)</span><div class="prot-track"><div class="prot-fill" style="width:40%"></div></div><span class="prot-val">8g</span></div>
+  </div>
+
+  <div class="sec-title">How to hit 110–120g daily (sample combination)</div>
+  <div class="card">
+    <table class="food-table">
+      <tr><th>Food (daily amounts)</th><th>Protein</th></tr>
+      <tr><td>Paneer 150–180g across the day</td><td>27–32g</td></tr>
+      <tr><td>Dal (chana/moong/rajma) 2.5–3 cups cooked</td><td>30–36g</td></tr>
+      <tr><td>Sprouts ½ cup + roasted chana 40g</td><td>17g</td></tr>
+      <tr><td>Peanuts 30g + peanut butter 1 tbsp</td><td>11g</td></tr>
+      <tr><td>Buffalo milk 400–450 ml</td><td>10–11g</td></tr>
+      <tr><td>Muesli 50g + besan in chilla</td><td>12–15g</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>107–122g ✅</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="sec-title">Pro tips for vegetarian protein</div>
+  <div class="card">
+    <ul class="step-list">
+      <li class="step-item"><span class="num">1</span><div><div class="s-title">Paneer is your best friend — eat 150–200g daily across meals</div><div class="s-desc">Buy from a trusted shop or make at home by curdling buffalo milk with lemon. Home paneer from buffalo milk is highest quality and cheapest.</div></div></li>
+      <li class="step-item"><span class="num">2</span><div><div class="s-title">Sprout your legumes daily — doubles protein and nutrient availability</div><div class="s-desc">Soak moong/chana overnight. Tie in cloth. Ready in 12–16 hours. Sprouting increases protein absorption by 30% and adds live Vitamin C.</div></div></li>
+      <li class="step-item"><span class="num">3</span><div><div class="s-title">Have protein at every single meal — never eat a carb-only meal</div><div class="s-desc">Dal or paneer must be present at breakfast, lunch, and dinner. Without protein at a meal, your body burns muscle for energy instead of fat.</div></div></li>
+      <li class="step-item"><span class="num">4</span><div><div class="s-title">Combine dal + paneer for highest protein at dinner</div><div class="s-desc">Dal alone has incomplete amino acids. When combined with paneer (or any dairy), you get a complete protein profile — better for muscle repair overnight.</div></div></li>
+      <li class="step-item"><span class="num">5</span><div><div class="s-title">Peanut butter (natural, no sugar brand) is affordable and protein-dense</div><div class="s-desc">Add to chilla, spread on chapati, or mix in milk. My Fitness / Pintola natural peanut butter — 8g protein per 2 tbsp, only ~180 kcal.</div></div></li>
+    </ul>
+  </div>
+</div>
+
+
+<div id="gym" class="section">
+  <div class="tip">8 PM gym time is fine. You go after dinner prep. Keep dinner light and pre-gym meal at 7 PM. Full workout structure: 10 min warmup → 55 min weights → 20 min cardio → 5 min cooldown = 90 min total.</div>
+
+  <div class="sec-title">Monday — Chest + Triceps <span class="day-badge db-str">Strength</span></div>
+  <div class="day-card">
+    <ul class="ex-list">
+      <li class="ex-item"><span class="dot"></span><div><strong>Barbell Bench Press</strong> — 4 sets × 10–12 reps | Rest: 90 sec<br><span style="color:#666;font-size:12px">Start weight: 30–40 kg. Increase 2.5 kg every week. Flat back, control descent.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Incline Dumbbell Press</strong> — 3 sets × 10 reps | Rest: 75 sec<br><span style="color:#666;font-size:12px">Start: 10–12 kg dumbbells each hand. Reduces man-boob appearance fast.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Cable Crossover / Chest Fly</strong> — 3 sets × 12 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Light weight, slow squeeze. Defines chest line.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Tricep Pushdown (cable)</strong> — 3 sets × 12–15 reps | Rest: 60 sec</div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Overhead Tricep Extension (dumbbell)</strong> — 3 sets × 12 reps | Rest: 60 sec</div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Treadmill Incline Walk</strong> — 20 min | Speed: 5.5–6 km/h | Incline: 8–10%<br><span style="color:#666;font-size:12px">Burns ~220 kcal. Low joint stress. Best primary cardio for your weight.</span></div></li>
+    </ul>
+  </div>
+
+  <div class="sec-title">Tuesday — Back + Biceps <span class="day-badge db-str">Strength</span></div>
+  <div class="day-card">
+    <ul class="ex-list">
+      <li class="ex-item"><span class="dot"></span><div><strong>Lat Pulldown</strong> — 4 sets × 10–12 reps | Rest: 90 sec<br><span style="color:#666;font-size:12px">Start: 30–35 kg. Creates V-taper — makes waist look narrower. Pull to upper chest.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Seated Cable Row</strong> — 3 sets × 12 reps | Rest: 75 sec</div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Dumbbell Single Arm Row</strong> — 3 sets × 10 each side | Rest: 60 sec<br><span style="color:#666;font-size:12px">Start: 12–15 kg. Back flat, pull elbow high.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Barbell / EZ Bar Curl</strong> — 3 sets × 12 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Start: 15–20 kg. Elbows fixed at sides.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Hammer Curl</strong> — 3 sets × 12 reps | Rest: 60 sec</div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Treadmill HIIT</strong> — 20 min | 1 min jog (7–8 km/h) / 90 sec walk × 7 rounds<br><span style="color:#666;font-size:12px">Burns ~280 kcal. Don't sprint at 104 kg — fast jog is enough. Saves joints.</span></div></li>
+    </ul>
+  </div>
+
+  <div class="sec-title">Wednesday — Legs + Inner Thighs <span class="day-badge db-str">Strength</span></div>
+  <div class="day-card">
+    <ul class="ex-list">
+      <li class="ex-item"><span class="dot"></span><div><strong>Goblet Squat (dumbbell)</strong> — 4 sets × 12 reps | Rest: 90 sec<br><span style="color:#666;font-size:12px">Start: 10–12 kg dumbbell held at chest. Safer than barbell squat at 104 kg initially.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Leg Press (wide stance)</strong> — 3 sets × 12 reps | Rest: 75 sec<br><span style="color:#666;font-size:12px">Wide foot placement targets inner thigh directly. Best exercise for inner thigh fat.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Romanian Deadlift</strong> — 3 sets × 10 reps | Rest: 90 sec<br><span style="color:#666;font-size:12px">Start: 30–40 kg barbell. Hamstrings + glutes. Hinge at hips, not knees.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Walking Lunges</strong> — 3 sets × 10 each leg | Rest: 60 sec<br><span style="color:#666;font-size:12px">No weight initially — your bodyweight is heavy enough. Add dumbbells from month 2.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Hip Adduction Machine (inner thigh)</strong> — 3 sets × 15 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Directly targets inner thigh fat zone. Light weight, full range of motion.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Stationary Cycling</strong> — 20 min | Moderate resistance<br><span style="color:#666;font-size:12px">Easy on joints post-leg day. Burns ~200 kcal.</span></div></li>
+    </ul>
+  </div>
+
+  <div class="sec-title">Thursday — Rest / Active Recovery <span class="day-badge db-rest">Rest</span></div>
+  <div class="day-card">
+    <ul class="ex-list">
+      <li class="ex-item"><span class="dot"></span><div>30 min brisk outdoor walk (8000–10000 steps target daily)</div></li>
+      <li class="ex-item"><span class="dot"></span><div>Full body stretching 15 min — especially legs and lower back (after leg day)</div></li>
+      <li class="ex-item"><span class="dot"></span><div>Hair oil treatment (Sunday night is ideal but Thursday also works)</div></li>
+    </ul>
+  </div>
+
+  <div class="sec-title">Friday — Shoulders + Core + Side Belly <span class="day-badge db-str">Strength</span></div>
+  <div class="day-card">
+    <ul class="ex-list">
+      <li class="ex-item"><span class="dot"></span><div><strong>Overhead Dumbbell Press</strong> — 4 sets × 10 reps | Rest: 90 sec<br><span style="color:#666;font-size:12px">Start: 8–10 kg each hand. Builds shoulder width = makes body look broader and belly smaller.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Lateral Raises</strong> — 3 sets × 15 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Start: 5–6 kg. Light weight, slow controlled movement. Side delts = wide shoulder look.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Face Pulls (cable)</strong> — 3 sets × 15 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Rear delts + posture. Better posture makes you look 5 kg slimmer immediately.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Russian Twists (with 5 kg plate)</strong> — 3 sets × 20 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">BEST exercise for side belly / love handles. Hold plate, lean back 45°, twist side to side.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Plank</strong> — 3 × 45 sec (build to 90 sec by month 2) | Rest: 60 sec</div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Hanging Leg Raises</strong> — 3 × 10–12 reps | Rest: 60 sec<br><span style="color:#666;font-size:12px">Lower abs + lower belly fat reduction. Hang from bar, raise legs to 90°.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Side Plank</strong> — 3 × 30 sec each side | Rest: 45 sec<br><span style="color:#666;font-size:12px">Direct love handle toner. Build up from 20 sec if too hard initially.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Treadmill Incline Walk</strong> — 20 min</div></li>
+    </ul>
+  </div>
+
+  <div class="sec-title">Saturday — Full Body HIIT + Elliptical <span class="day-badge db-mix">Mixed</span></div>
+  <div class="day-card">
+    <ul class="ex-list">
+      <li class="ex-item"><span class="dot"></span><div><strong>HIIT Circuit (5 rounds)</strong>: Modified Burpees 8 reps / Squat Jumps 10 reps / Mountain Climbers 20 / High Knees 30 sec | Rest: 90 sec between rounds<br><span style="color:#666;font-size:12px">Modified burpee = no jump at top. Easier on joints at 104 kg. Burns 350–400 kcal.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Elliptical</strong> — 15–20 min | Resistance: 3–5<br><span style="color:#666;font-size:12px">Use 1–2× per week only as per your plan. Full body low-impact. Burns ~250 kcal.</span></div></li>
+      <li class="ex-item"><span class="dot"></span><div><strong>Rowing machine</strong> — 10 min (if available)</div></li>
+    </ul>
+  </div>
+
+  <div class="sec-title">Sunday — Complete Rest <span class="day-badge db-rest">Rest</span></div>
+  <div class="day-card">
+    <ul class="ex-list">
+      <li class="ex-item"><span class="dot"></span><div>No gym. Maximum 20 min gentle walk.</div></li>
+      <li class="ex-item"><span class="dot"></span><div>Deep hair oil treatment overnight (coconut + castor + bhringraj).</div></li>
+      <li class="ex-item"><span class="dot"></span><div>Meal prep — soak chana/rajma, prepare sprouts for the week.</div></li>
+    </ul>
+  </div>
+
+  <div class="sec-title">Face fat + jawline — daily 5 min (do at bedtime)</div>
+  <div class="card">
+    <ul class="step-list">
+      <li class="step-item"><span class="num">1</span><div><div class="s-title">Chin tucks — 3 × 15 reps</div><div class="s-desc">Sit straight, push chin backward (double chin position), hold 5 sec, release. Builds jawline muscle directly.</div></div></li>
+      <li class="step-item"><span class="num">2</span><div><div class="s-title">Jaw clench — 20 reps</div><div class="s-desc">Slowly clench jaw tight, hold 3 sec, release slowly. Tones masseter muscle = sharp jawline.</div></div></li>
+      <li class="step-item"><span class="num">3</span><div><div class="s-title">Fish face + neck roll — 20 reps each</div><div class="s-desc">Suck cheeks in for 5 sec (cheek fat). Then full neck rolls to reduce double chin.</div></div></li>
+    </ul>
+  </div>
+</div>
+
+
+<div id="cardio" class="section">
+<div class="tip">At 104 kg, incline treadmill walking is your main cardio (4–5 days/week). Use the elliptical 1–2 days/week. Skip true sprinting for now; a fast jog protects knees and hips. Cardio supports fat loss but the calorie deficit does most of the work.</div>
+<div class="sec-title">Weekly cardio protocol</div>
+<div class="card"><table class="ft">
+<tr><th>Day</th><th>Type</th><th>Time</th><th>Settings</th><th>Approx. kcal</th></tr>
+<tr><td>Mon</td><td>Incline walk</td><td>20 min</td><td>5.5 km/h, incline 8–10%</td><td>~220</td></tr>
+<tr><td>Tue</td><td>Jog/walk intervals</td><td>20 min</td><td>1 min jog 7–8 km/h, 90 sec walk × 7</td><td>~270</td></tr>
+<tr><td>Wed</td><td>Stationary cycling</td><td>20 min</td><td>Resistance 5–7</td><td>~200</td></tr>
+<tr><td>Thu</td><td>Brisk walk (rest day)</td><td>30 min</td><td>4.5 km/h flat or outdoors</td><td>~150</td></tr>
+<tr><td>Fri</td><td>Incline walk</td><td>20 min</td><td>5.5 km/h, incline 8%</td><td>~210</td></tr>
+<tr><td>Sat</td><td>Elliptical</td><td>15–20 min</td><td>Resistance 3–5; add 2–3 min weekly</td><td>~240</td></tr>
+<tr><td>Sun</td><td>Rest or easy walk</td><td>Optional</td><td>Flat, easy</td><td>~80</td></tr>
+</table></div>
+<div class="sec-title">Treadmill vs elliptical for you</div>
+<div class="card"><table class="ft">
+<tr><th>Factor</th><th>Treadmill incline walk</th><th>Elliptical</th></tr>
+<tr><td>Calories (20 min)</td><td>~180–220</td><td>~200–240</td></tr>
+<tr><td>Tiredness</td><td>Lower, easy to sustain</td><td>Higher (arms + legs together)</td></tr>
+<tr><td>Joint stress</td><td>Moderate</td><td>Low</td></tr>
+<tr><td>After weights</td><td>Easy</td><td>Harder</td></tr>
+<tr><td>Best use</td><td>Primary, 4–5 days</td><td>Secondary, 1–2 days</td></tr>
+</table></div>
+<div class="warn">Getting tired faster on the elliptical is normal at your weight; it improves in 3–4 weeks. Neither machine burns belly or thigh fat specifically. Side belly and inner thigh fat leave as total body fat drops, and genetics decides the order.</div>
+</div>
+
+<div id="timetable" class="section">
+  <div class="tip">Gym is at 8 PM. Study peaks 9 AM–1 PM and 4:30–7 PM. This schedule protects your GATE prep completely while fitting the full workout and 7 hrs sleep.</div>
+  <div class="time-line">
+    <div class="trow" style="--dc:#EF9F27"><div class="t-time">6:00 AM</div><div class="t-card food"><div class="t-title">Wake up + morning drink</div><div class="t-desc">Warm lemon water + soaked almonds + walnuts. No heavy food yet.</div></div></div>
+    <div class="trow" style="--dc:#1D9E75"><div class="t-time">6:15–9:00 AM</div><div class="t-card study"><div class="t-title">Study Block 1 — Deep focus (GATE hardest topics)</div><div class="t-desc">Maths, algorithms, theory. Freshest brain. Phone on DND. 2 hrs 45 min.</div></div></div>
+    <div class="trow" style="--dc:#EF9F27"><div class="t-time">9:00–9:30 AM</div><div class="t-card food"><div class="t-title">Breakfast — biggest meal</div><div class="t-desc">Any Breakfast Option A/B/C from the meal plan. Sit and eat — don't skip this.</div></div></div>
+    <div class="trow" style="--dc:#1D9E75"><div class="t-time">9:30 AM–1:00 PM</div><div class="t-card study"><div class="t-title">Study Block 2 — Peak zone (3.5 hrs)</div><div class="t-desc">Problem solving, PYQs, new chapters. Your mental peak window. Drink water continuously.</div></div></div>
+    <div class="trow" style="--dc:#EF9F27"><div class="t-time">1:00–1:45 PM</div><div class="t-card food"><div class="t-title">Lunch + short rest</div><div class="t-desc">Any Lunch Option A/B/C. 15 min rest after — not sleeping, just lying down. Let blood sugar stabilize.</div></div></div>
+    <div class="trow" style="--dc:#1D9E75"><div class="t-time">1:45–4:00 PM</div><div class="t-card study"><div class="t-title">Study Block 3 — Revision (2.25 hrs)</div><div class="t-desc">Flashcards, notes review, lighter reading. Afternoon dip hits here — don't force hard new content.</div></div></div>
+    <div class="trow" style="--dc:#D4537E"><div class="t-time">4:00–4:30 PM</div><div class="t-card rest"><div class="t-title">Break + Snack</div><div class="t-desc">Any Snack Option A/B/C. 10 min walk (even indoors). Resets brain for second wind.</div></div></div>
+    <div class="trow" style="--dc:#1D9E75"><div class="t-time">4:30–7:00 PM</div><div class="t-card study"><div class="t-title">Study Block 4 — Second wind (2.5 hrs)</div><div class="t-desc">Mock tests, numericals, practice papers. Second peak around 5 PM.</div></div></div>
+    <div class="trow" style="--dc:#EF9F27"><div class="t-time">7:00–7:30 PM</div><div class="t-card food"><div class="t-title">Pre-gym meal</div><div class="t-desc">Banana + peanut butter OR any Pre-gym option. Light. Change clothes, get ready.</div></div></div>
+    <div class="trow" style="--dc:#7F77DD"><div class="t-time">8:00–9:30 PM</div><div class="t-card gym"><div class="t-title">GYM — 90 minutes</div><div class="t-desc">10 min warmup → 55 min weights → 20 min cardio → 5 min stretch. Follow weekly plan.</div></div></div>
+    <div class="trow" style="--dc:#EF9F27"><div class="t-time">9:30–10:00 PM</div><div class="t-card food"><div class="t-title">Post-workout dinner — HIGH PROTEIN</div><div class="t-desc">Any Dinner Option A/B/C. Must eat within 45 min of gym. Paneer bhurji / moong dal / thin dal.</div></div></div>
+    <div class="trow" style="--dc:#1D9E75"><div class="t-time">10:00–11:00 PM</div><div class="t-card study"><div class="t-title">Light revision only (1 hr)</div><div class="t-desc">Today's notes review ONLY. No new topics. This is memory consolidation time before sleep.</div></div></div>
+    <div class="trow" style="--dc:#D4537E"><div class="t-time">11:00–11:30 PM</div><div class="t-card rest"><div class="t-title">Wind down</div><div class="t-desc">Face exercises (5 min), scalp massage (5 min), screen off, full body stretch.</div></div></div>
+    <div class="trow" style="--dc:#185FA5"><div class="t-time">11:30 PM–6:00 AM</div><div class="t-card sleep"><div class="t-title">Sleep — 6.5 hrs</div><div class="t-desc">Fat burns, muscles grow, GATE content gets stored. Never sacrifice sleep for study — it backfires.</div></div></div>
+  </div>
+  <div class="warn" style="margin-top:12px">Total focused study: ~9.5 hrs daily. Quality over quantity — 7 focused hrs beats 12 distracted hrs. Use Pomodoro (50 min study / 10 min break) in each block.</div>
+</div>
+
+
+<!-- DEFICIENCY SECTION -->
+<div id="deficiency" class="section">
+<div class="tip">As a pure vegetarian with no eggs and no curd, you are at higher risk of deficiency in B12, Vitamin D, Zinc, Iron, Omega-3 (DHA/EPA) and Magnesium. These affect energy, testosterone, fat loss, gym recovery and hair. Table below shows what food can fix and what needs a supplement.</div>
+<div class="sec-title">Food or supplement? Complete verdict</div>
+<div class="card">
+<table class="ft">
+<tr><th>Nutrient</th><th>Why you need it</th><th>Best veg sources (no egg/curd)</th><th>Daily need</th><th>Verdict</th></tr>
+<tr><td><strong>Protein</strong></td><td>Muscle, hair, skin, hormones</td><td>Paneer, dal, rajma, chana, sprouts, peanuts, muesli, buffalo milk</td><td>110–120g</td><td>✅ Food is enough (meal plan covers it)</td></tr>
+<tr><td><strong>Vitamin B12</strong></td><td>Energy, nerves, hair pigment, hair growth</td><td>Buffalo milk and paneer have small amounts only. Not reliable.</td><td>2.4 mcg (supplement higher for absorption)</td><td>❌ Supplement needed</td></tr>
+<tr><td><strong>Vitamin D</strong></td><td>Testosterone support, bones, hair follicle cycling, mood</td><td>Sunlight (15–20 min, 10 AM–12 PM if possible). Milk gives tiny amounts.</td><td>600–2000 IU (more if blood test is low)</td><td>❌ Supplement needed (most Indians are low)</td></tr>
+<tr><td><strong>Zinc</strong></td><td>Testosterone, scalp oil balance, hair repair</td><td>Pumpkin seeds, roasted chana, rajma, moong dal, peanuts, wheat</td><td>11–15 mg</td><td>⚠️ Food partly. Supplement 15–25 mg is reasonable for a veg gym-goer</td></tr>
+<tr><td><strong>Iron</strong></td><td>Oxygen to hair roots, energy, gym stamina</td><td>Rajma, chana, moong sprouts, palak, til, jaggery, pumpkin seeds (always with lemon/amla)</td><td>8–11 mg (higher absorption needed in veg)</td><td>⚠️ Food first. Supplement ONLY if blood test (ferritin/Hb) is low</td></tr>
+<tr><td><strong>Magnesium</strong></td><td>Sleep, recovery, testosterone, muscle cramps</td><td>Pumpkin seeds, peanuts, almonds, walnuts, banana, palak, rajma</td><td>400–420 mg</td><td>⚠️ Food mostly. Supplement optional for sleep/cramps</td></tr>
+<tr><td><strong>Omega-3 (DHA/EPA)</strong></td><td>Scalp, shine, inflammation, testosterone, joints</td><td>Walnuts, flax, chia give ALA only (body converts poorly)</td><td>250–500 mg DHA+EPA</td><td>❌ Algae oil supplement recommended</td></tr>
+<tr><td><strong>Vitamin C</strong></td><td>Collagen, iron absorption, skin tightening</td><td>Amla, lemon, guava, tomato, capsicum, sprouts</td><td>75–90 mg</td><td>✅ Food is enough</td></tr>
+<tr><td><strong>Calcium</strong></td><td>Bones, muscle function</td><td>Buffalo milk 250ml (~290mg), paneer, til, ragi</td><td>1000 mg</td><td>✅ Food is enough</td></tr>
+<tr><td><strong>Potassium</strong></td><td>Cramps, BP, hydration</td><td>Banana, coconut water, potato, palak</td><td>3500 mg</td><td>✅ Food is enough</td></tr>
+<tr><td><strong>Folate (B9)</strong></td><td>Cell division in hair roots, red blood cells</td><td>Palak, dal, sprouts, beetroot, methi, orange</td><td>400 mcg</td><td>✅ Food is enough</td></tr>
+<tr><td><strong>Vitamin E</strong></td><td>Scalp circulation, antioxidant, skin</td><td>Almonds, sunflower seeds, peanuts, groundnut oil</td><td>15 mg</td><td>✅ Food is enough (7 almonds daily)</td></tr>
+<tr><td><strong>Biotin (B7)</strong></td><td>Keratin production</td><td>Peanuts, almonds, sweet potato, sunflower seeds, milk</td><td>30 mcg</td><td>➖ Food usually enough. Supplement helps mainly if truly deficient</td></tr>
+</table>
+</div>
+<div class="alert">Get these blood tests once before starting supplements (about ₹1500–2500 at any lab): Vitamin B12, Vitamin D (25-OH), Serum Ferritin + Hemoglobin, Thyroid (TSH), and Zinc if available. This tells you exactly what you need and prevents wasting money or overdosing iron and zinc. Repeat after 3 months.</div>
+<div class="sec-title">Absorption rules that matter for vegetarians</div>
+<div class="card">
+<ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Lemon/amla with every dal, rajma, sprouts, palak meal</div><div class="s-desc">Vitamin C can raise plant iron absorption 2–3 times.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">No tea or coffee within 1 hour of lunch or dinner</div><div class="s-desc">Tannins block iron absorption heavily. Keep chai/coffee away from main meals.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Soak, sprout or ferment legumes and grains</div><div class="s-desc">Reduces phytates that bind zinc, iron and magnesium.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Take Vitamin D, E, A with a meal that has fat</div><div class="s-desc">Fat-soluble vitamins need fat to absorb. Take D3 with breakfast, not empty stomach.</div></div></li>
+<li class="step-item"><span class="num">5</span><div><div class="s-title">Take zinc and iron at different times</div><div class="s-desc">They compete for absorption. Zinc at night, iron (if prescribed) with breakfast or lunch plus vitamin C.</div></div></li>
+</ul>
+</div>
+</div>
+
+<!-- SUPPLEMENTS SECTION -->
+<div id="supplements" class="section">
+<div class="tip">Start in phases, not all at once. Week 1: B12 + D3. Week 3: Zinc + Omega-3. Month 2: Magnesium + Ashwagandha (optional). Biotin and multivitamin are optional. Do the blood test first if possible. Brand names are examples available in India; any reputable brand with the same dose works.</div>
+<div class="sec-title">Core supplements for you</div>
+<div class="supp-grid">
+<div class="supp-card"><div class="sn">Vitamin B12 🚨 Priority</div><div class="sd">No dependable vegetarian source without eggs/fish. Low B12 causes fatigue, hair fall, premature greying and brain fog.</div><div class="si">Examples: Neurobion Forte, Healthvit B12, Inlife B12<br>Dose: 500–1000 mcg daily (or as per blood test/doctor)<br>Start: Week 1</div></div>
+<div class="supp-card"><div class="sn">Vitamin D3 (+K2 optional)</div><div class="sd">Most Indians are deficient. Supports testosterone, bones and hair follicle cycling. K2 is optional.</div><div class="si">Examples: TrueBasics D3+K2, HealthKart D3<br>Dose: 1000–2000 IU daily; 60,000 IU weekly only if doctor prescribes for low levels<br>Take with breakfast</div></div>
+<div class="supp-card"><div class="sn">Algae Omega-3 (DHA+EPA)</div><div class="sd">Vegan source of the omega-3 that walnuts and flax cannot reliably give. Helps scalp, shine, inflammation.</div><div class="si">Examples: Wellbeing Nutrition Vegan Omega-3, Nutrabay algal omega<br>Dose: 250–500 mg DHA+EPA daily after lunch<br>Start: Week 3</div></div>
+<div class="supp-card"><div class="sn">Zinc</div><div class="sd">Needed for testosterone, scalp health and hair repair. Lost in sweat during gym.</div><div class="si">Examples: zinc bisglycinate/gluconate tablets<br>Dose: 15–25 mg daily with food at night. Do not exceed 40 mg/day total<br>Start: Week 3</div></div>
+</div>
+<div class="sec-title">Optional / test-based</div>
+<div class="supp-grid">
+<div class="supp-card"><div class="sn">Iron (only if blood test low)</div><div class="sd">Do not take blindly. Excess iron is harmful. Doctor sets dose based on ferritin and Hb.</div><div class="si">Take with vitamin C, away from tea/calcium/zinc</div></div>
+<div class="supp-card"><div class="sn">Magnesium glycinate</div><div class="sd">Helps sleep quality, muscle cramps and recovery if your diet is short.</div><div class="si">Dose: 200–300 mg at night<br>Start: Month 2</div></div>
+<div class="supp-card"><div class="sn">Ashwagandha (KSM-66)</div><div class="sd">Some trials show modest testosterone and cortisol improvement in stressed men. Not a miracle; skip if you have thyroid issues or take regular medication without asking a doctor.</div><div class="si">Dose: 300–600 mg daily<br>Cycle 8–12 weeks then pause</div></div>
+<div class="supp-card"><div class="sn">Biotin</div><div class="sd">Helps if you are deficient. In people with normal levels the evidence for extra hair density is weak. Can distort some lab tests (thyroid, hormones), so stop it 3–5 days before blood tests.</div><div class="si">Dose: 2500–5000 mcg daily, optional</div></div>
+</div>
+<div class="sec-title">Daily supplement timing</div>
+<div class="card">
+<table class="ft">
+<tr><th>Time</th><th>Take</th><th>Why then</th></tr>
+<tr><td>Breakfast (9 AM)</td><td>Vitamin D3 (+K2), B12, multivitamin if using</td><td>Fat-soluble D3 needs food; B12 is fine with food</td></tr>
+<tr><td>After lunch (1:30 PM)</td><td>Algae Omega-3</td><td>Absorbs better with a meal</td></tr>
+<tr><td>Night (11 PM)</td><td>Zinc (with a small snack), Magnesium, Ashwagandha if using</td><td>Supports sleep and overnight recovery</td></tr>
+</table>
+</div>
+<div class="warn">Supplements support a good diet; they do not replace it. If you are on any medicine, or have kidney, thyroid or liver issues, check with a doctor before starting. High-dose supplements without testing can cause harm.</div>
+</div>
+<!-- HAIR SECTION -->
+<div id="hair" class="section">
+<div class="tip">Your hair goals: fix dryness, frizz, dullness, hair fall, low density, weak roots, damaged texture and an unhealthy scalp. Hair is made mostly of protein (keratin) and grows from follicles that need iron, zinc, B-vitamins, vitamin D and good blood flow. Fix the inside (nutrients) and the outside (care) together. Realistic timeline: less breakage and frizz in 3–4 weeks, less shedding in 2–3 months, visible density in 4–6 months.</div>
+
+<div class="sec-title">1. Your problems → causes → fixes</div>
+<div class="card">
+<table class="ft">
+<tr><th>Problem</th><th>Main causes</th><th>Fix (inside)</th><th>Fix (outside)</th></tr>
+<tr><td><strong>Dry hair</strong></td><td>Sulphate shampoo, hot water, low healthy fat, dehydration, hard water</td><td>Omega-3, vitamin E, 4L water, nuts/seeds daily</td><td>Sulphate-free shampoo, oil before wash, conditioner, lukewarm/cool rinse</td></tr>
+<tr><td><strong>Frizz</strong></td><td>Raised cuticle from dryness, towel rubbing, heat, humidity</td><td>Protein + omega-3 + hydration</td><td>Conditioner on lengths, no towel rubbing, serum on damp ends, wide-tooth comb</td></tr>
+<tr><td><strong>No shine</strong></td><td>Rough cuticle, product build-up, low omega-3</td><td>Omega-3, vitamin E, protein</td><td>Cool final rinse, ACV/rice water rinse, serum, clarifying wash once every 2–3 weeks</td></tr>
+<tr><td><strong>Hair fall / thinning</strong></td><td>Low iron/ferritin, low protein, low D, B12 deficiency, stress, rapid weight loss, thyroid</td><td>Protein 110g+, iron foods + vitamin C, B12, D3, zinc, do not crash diet</td><td>Gentle handling, scalp massage, no tight styles</td></tr>
+<tr><td><strong>Low density</strong></td><td>Nutrient gaps, follicle miniaturisation (genetic), poor scalp circulation</td><td>Full nutrient plan below</td><td>Daily scalp massage; see a dermatologist if hairline recedes (genetic loss needs medical treatment)</td></tr>
+<tr><td><strong>Weak roots / breakage</strong></td><td>Protein shortage, harsh washing, heat, chemical colour</td><td>Protein, vitamin C (collagen), zinc, iron</td><td>Protein-rich masks sparingly, reduce heat, trim split ends every 8–10 weeks</td></tr>
+<tr><td><strong>Unhealthy scalp</strong></td><td>Dandruff, oil build-up, infrequent washing, sweat after gym</td><td>Zinc, omega-3, B-vitamins</td><td>Wash after sweaty gym days, anti-dandruff shampoo if flaking, no heavy oil on an itchy scalp</td></tr>
+</table>
+</div>
+
+<div class="sec-title">2. Every hair nutrient — what it does and where you get it</div>
+<div class="card">
+<table class="ft">
+<tr><th>Nutrient</th><th>Role for hair</th><th>Your veg sources + amounts</th><th>Food enough?</th></tr>
+<tr><td><strong>Protein (keratin building blocks)</strong></td><td>Hair is about 90% protein. Shortage causes thin, brittle, shedding hair</td><td>Paneer 150–180g, dal 2.5–3 cups cooked, sprouts, peanuts, muesli, buffalo milk 400ml</td><td>✅ Yes with meal plan (110–120g)</td></tr>
+<tr><td><strong>Lysine + cysteine/methionine</strong></td><td>Amino acids for keratin and strength. Veg diets are often low in lysine</td><td>Lysine: dal, rajma, paneer, milk, sprouts. Sulphur amino acids: wheat, oats, onion, garlic, peanuts, sunflower seeds</td><td>✅ Yes if you eat dal + paneer daily</td></tr>
+<tr><td><strong>Iron</strong></td><td>Carries oxygen to hair roots; low ferritin is a top cause of hair fall</td><td>Rajma, chana, moong sprouts, palak, til (1 tsp), pumpkin seeds, jaggery (small piece) + lemon</td><td>⚠️ Food first. Check ferritin; supplement only if low</td></tr>
+<tr><td><strong>Zinc</strong></td><td>Hair tissue repair, oil gland balance, follicle growth</td><td>Pumpkin seeds 20g, roasted chana 40g, rajma, moong dal, peanuts</td><td>⚠️ Partly. Supplement 15–25 mg reasonable</td></tr>
+<tr><td><strong>Vitamin B12</strong></td><td>Red blood cells, follicle growth, hair pigment</td><td>No reliable veg source without egg/fish</td><td>❌ Supplement</td></tr>
+<tr><td><strong>Folate (B9)</strong></td><td>Rapid cell division in follicles</td><td>Palak, methi, dal, sprouts, beetroot</td><td>✅ Yes</td></tr>
+<tr><td><strong>Biotin (B7)</strong></td><td>Keratin production; true deficiency causes hair loss</td><td>Peanuts, almonds, sunflower seeds, sweet potato, milk</td><td>➖ Usually yes. Supplement optional</td></tr>
+<tr><td><strong>Vitamin D</strong></td><td>Wakes up follicles; low levels linked to shedding</td><td>Sunlight 15–20 min</td><td>❌ Supplement (most are low)</td></tr>
+<tr><td><strong>Omega-3 (DHA/EPA)</strong></td><td>Scalp health, shine, less dryness and inflammation</td><td>Walnuts 4–5, flax 1 tsp, chia 1 tsp (ALA only)</td><td>❌ Algae supplement recommended</td></tr>
+<tr><td><strong>Vitamin C</strong></td><td>Collagen for roots and capillaries, iron absorption</td><td>Amla 1/day, lemon, guava, tomato, capsicum</td><td>✅ Yes</td></tr>
+<tr><td><strong>Vitamin E</strong></td><td>Scalp blood flow, antioxidant protection</td><td>Almonds 7–8, sunflower seeds, peanuts</td><td>✅ Yes</td></tr>
+<tr><td><strong>Vitamin A (beta-carotene)</strong></td><td>Sebum for natural moisture. Too much causes hair loss, so food only</td><td>Carrot, pumpkin, sweet potato, palak, papaya, mango</td><td>✅ Yes. Avoid high-dose vitamin A pills</td></tr>
+<tr><td><strong>Magnesium</strong></td><td>Reduces stress response, supports protein synthesis</td><td>Pumpkin seeds, almonds, peanuts, banana, palak</td><td>⚠️ Mostly. Optional supplement</td></tr>
+<tr><td><strong>Selenium</strong></td><td>Antioxidant, thyroid support (excess is harmful)</td><td>Sunflower seeds, wheat, mushrooms, sprouts</td><td>✅ Yes. Do not supplement without testing</td></tr>
+<tr><td><strong>Water</strong></td><td>Hydrated scalp and shaft; dryness and breakage drop</td><td>4–4.5 L daily (Water tab)</td><td>✅ Yes</td></tr>
+</table>
+</div>
+
+<div class="sec-title">3. Final answer: food vs supplement for hair</div>
+<div class="grid2">
+<div class="mini-card"><div class="ml">Must supplement</div><div class="mv" style="font-size:13px">Vitamin B12, Vitamin D3, Algae Omega-3. (Hard or impossible to cover from your veg-no-egg diet.)</div></div>
+<div class="mini-card"><div class="ml">Supplement only if test shows low</div><div class="mv" style="font-size:13px">Iron, Zinc (reasonable to take 15–25 mg anyway), Biotin, Magnesium.</div></div>
+<div class="mini-card"><div class="ml">Food is enough</div><div class="mv" style="font-size:13px">Protein, Vitamin C, E, A, Folate, Selenium, Calcium, Potassium — as per your meal plan.</div></div>
+<div class="mini-card"><div class="ml">Do not self-dose</div><div class="mv" style="font-size:13px">Iron, high-dose Vitamin A, Selenium, and zinc above 40 mg/day.</div></div>
+</div>
+
+<div class="sec-title">4. Daily hair-food checklist (fits inside your meal plan)</div>
+<div class="card">
+<table class="ft">
+<tr><th>Item</th><th>Amount</th><th>When</th><th>Covers</th></tr>
+<tr><td>Amla (raw) or lemon water</td><td>1 amla or ½ lemon</td><td>6 AM</td><td>Vitamin C, collagen, iron absorption</td></tr>
+<tr><td>Soaked almonds</td><td>7–8</td><td>6 AM</td><td>Vitamin E, biotin, magnesium</td></tr>
+<tr><td>Walnuts + flax seeds</td><td>4–5 halves + 1 tsp</td><td>6 AM</td><td>Omega-3 (ALA), shine, scalp</td></tr>
+<tr><td>Paneer</td><td>150–180g total</td><td>Breakfast + dinner</td><td>Protein, lysine, calcium, B-vitamins</td></tr>
+<tr><td>Dal / rajma / chana</td><td>2.5–3 cups cooked</td><td>Lunch + dinner</td><td>Protein, iron, zinc, folate</td></tr>
+<tr><td>Palak or methi sabzi</td><td>1 cup, 4–5× per week</td><td>Lunch</td><td>Iron, folate, vitamin A, magnesium</td></tr>
+<tr><td>Pumpkin seeds</td><td>20g</td><td>4 PM snack</td><td>Zinc, iron, magnesium</td></tr>
+<tr><td>Sprouts</td><td>½–1 cup</td><td>Breakfast/snack</td><td>Protein, vitamin C, folate, iron</td></tr>
+<tr><td>Carrot / papaya / pumpkin</td><td>1 serving</td><td>Salad or sabzi</td><td>Beta-carotene for sebum</td></tr>
+<tr><td>Buffalo milk (no malai)</td><td>400–450 ml</td><td>Breakfast + night</td><td>Protein, calcium, some B12 and biotin</td></tr>
+<tr><td>Water</td><td>4–4.5 L</td><td>All day</td><td>Hydration of scalp and strands</td></tr>
+</table>
+</div>
+
+<div class="sec-title">5. Weekly hair-care schedule</div>
+<div class="card">
+<table class="ft">
+<tr><th>Day</th><th>What to do</th><th>Details</th></tr>
+<tr><td>Sunday night</td><td>Oil massage (pre-wash)</td><td>Warm coconut oil (3 tbsp) + castor oil (1 tbsp). Massage scalp 10–15 min with fingertips, spread to lengths. Leave 1–2 hours or overnight. If your scalp is itchy/dandruff-prone, keep oil to 1–2 hours only.</td></tr>
+<tr><td>Monday</td><td>Wash 1</td><td>Sulphate-free shampoo on scalp only (let suds run down). Conditioner on mid-lengths to ends, 3–5 min. Rinse with cool water. Squeeze water out, pat with soft cotton t-shirt. Serum (2–3 drops) on damp ends.</td></tr>
+<tr><td>Wednesday</td><td>Hydrating hair mask</td><td>Ripe banana + 1 tbsp honey + 1 tbsp coconut oil (blend smooth). Or aloe vera gel + 2 tbsp coconut milk. Apply to lengths, 30 min, wash with mild shampoo. (No egg or curd needed.)</td></tr>
+<tr><td>Thursday</td><td>Wash 2</td><td>Same routine as Monday. Maximum 2–3 washes per week. Rinse sweat off on gym days if scalp feels dirty.</td></tr>
+<tr><td>Friday</td><td>Rice water or ACV rinse</td><td>Rice water: soak ½ cup rice 30 min, strain, pour on hair after shampoo, 5–10 min, rinse. Or 1 tbsp apple cider vinegar in 1 mug water as final rinse for shine and build-up removal.</td></tr>
+<tr><td>Every night</td><td>Scalp massage</td><td>3–5 min with fingertips, no oil needed. Improves circulation; small studies show modest thickness benefits over months.</td></tr>
+<tr><td>Once in 2–3 weeks</td><td>Clarifying wash</td><td>Removes product and hard-water build-up that makes hair dull and dry.</td></tr>
+</table>
+</div>
+
+<div class="sec-title">6. Products (India)</div>
+<div class="supp-grid">
+<div class="supp-card"><div class="sn">Shampoo</div><div class="sd">Sulphate-free and gentle. If you have dandruff, use an anti-dandruff shampoo (ketoconazole or zinc pyrithione) twice a week.</div><div class="si">Examples: Mamaearth Onion, WOW ACV, Biotique, Cetaphil gentle cleanser style shampoos</div></div>
+<div class="supp-card"><div class="sn">Conditioner / mask</div><div class="sd">Use on lengths every wash. Choose one with argan, shea or keratin-type conditioning agents.</div><div class="si">Examples: Dove Intense Repair, TRESemmé Keratin Smooth, Mamaearth Argan</div></div>
+<div class="supp-card"><div class="sn">Leave-in serum</div><div class="sd">2–3 drops on damp ends to seal moisture and reduce frizz.</div><div class="si">Examples: Streax Pro Argan, Livon, Mamaearth Argan serum</div></div>
+<div class="supp-card"><div class="sn">Oils</div><div class="sd">Coconut oil reduces protein loss before washing. Castor oil is thick; mix with coconut oil. Bhringraj/amla oil are traditional and fine as scalp massage oils.</div><div class="si">Pure coconut oil, castor oil, Dabur Amla/Bhringraj</div></div>
+</div>
+
+<div class="sec-title">7. Habits that protect hair while you lose weight</div>
+<div class="card">
+<ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Do not crash diet</div><div class="s-desc">Rapid weight loss and low protein can trigger temporary shedding (telogen effluvium) 2–3 months later. Stay at your 1900 kcal plan, 0.5–1 kg per week, protein 110g+.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Lukewarm wash, cool rinse</div><div class="s-desc">Hot water strips scalp oil and roughens the cuticle.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Never rub or comb wet hair hard</div><div class="s-desc">Wet hair is weakest. Use a wide-tooth comb from ends upward, or finger-detangle with conditioner.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Limit heat and chemicals</div><div class="s-desc">Blow dry on cool/low setting if needed. Avoid straightening and bleaching while repairing hair.</div></div></li>
+<li class="step-item"><span class="num">5</span><div><div class="s-title">Protect from sun and pollution</div><div class="s-desc">Cover hair outdoors in strong sun; it fades and dries the shaft.</div></div></li>
+<li class="step-item"><span class="num">6</span><div><div class="s-title">Sleep 7 hours and manage GATE stress</div><div class="s-desc">Poor sleep and high stress push follicles into shedding phase. Gym, sleep and a calm night routine help.</div></div></li>
+<li class="step-item"><span class="num">7</span><div><div class="s-title">Hard water fix</div><div class="s-desc">If your tap water is hard, use a final rinse with filtered/boiled-cooled water and clarify every 2–3 weeks.</div></div></li>
+</ul>
+</div>
+
+<div class="sec-title">8. White hair (honest guide)</div>
+<div class="card">
+<ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">If caused by B12, iron or vitamin D deficiency, new growth can improve</div><div class="s-desc">Correct deficiencies and watch new roots over 3–6 months. Existing white strands do not turn black again.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">If it runs in your family, it is mostly genetic</div><div class="s-desc">Oils and herbs do not reverse genetic greying. They only keep the scalp and hair healthy.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Cover safely if you want</div><div class="s-desc">Use ammonia-free colour or henna (mix with amla/coffee water for a darker tone) every 4–6 weeks. Do a patch test first.</div></div></li>
+</ul>
+</div>
+
+<div class="warn">See a doctor or dermatologist if: hair fall is heavy for more than 3 months, you see bald patches, your hairline is receding, your scalp is very itchy, red or flaky, or you have fatigue, weight gain or cold intolerance (thyroid). Genetic thinning needs medical treatment; no diet or oil can fully replace it.</div>
+</div>
+<!-- FACE SECTION -->
+<div id="face" class="section">
+<div class="tip">You cannot spot-reduce face fat. Face fat drops as total body fat drops. Facial exercises can tone muscles and help the jaw area look more defined, but evidence for them is limited, so treat them as a bonus. The biggest changes come from fat loss, less salt, good sleep and posture.</div>
+<div class="sec-title">Daily 5-minute routine (bedtime)</div>
+<div class="card">
+<ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Chin tucks — 3 × 15, hold 5 sec</div><div class="s-desc">Pull chin straight back (double-chin position). Strengthens deep neck muscles and improves head posture.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Jaw clench — 20 reps, hold 3 sec</div><div class="s-desc">Tone the masseter. Do not overdo it; stop if your jaw clicks or hurts.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Fish face — 3 × 20, hold 5 sec</div><div class="s-desc">Suck cheeks in and hold. Light cheek muscle toning.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Tongue press + look up — 3 × 20, hold 5 sec</div><div class="s-desc">Press tongue to roof of mouth, tilt head back. Works the muscles under the chin.</div></div></li>
+<li class="step-item"><span class="num">5</span><div><div class="s-title">Neck rolls — 10 each direction</div><div class="s-desc">Slow and gentle. Skip if you have neck pain.</div></div></li>
+</ul>
+</div>
+<div class="sec-title">What actually slims the face</div>
+<div class="card">
+<ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Overall fat loss</div><div class="s-desc">Your plan (1900 kcal, 110g protein, gym 5 days) is the main driver. Face usually slims noticeably by 8–12 kg loss.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Less salt and packaged food</div><div class="s-desc">Excess sodium causes water retention and puffiness, especially in the morning.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Sleep 7 hours and 4+ L water</div><div class="s-desc">Poor sleep and dehydration both increase puffiness.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Posture</div><div class="s-desc">Keep chin level and shoulders back while studying. Forward-head posture makes the jaw and neck look softer. Face pulls on Friday help.</div></div></li>
+<li class="step-item"><span class="num">5</span><div><div class="s-title">Cold splash or ice roller in the morning (optional)</div><div class="s-desc">Temporarily reduces puffiness. Cosmetic only.</div></div></li>
+</ul>
+</div>
+</div>
+
+<!-- SKIN SECTION -->
+<div id="skin" class="section">
+<div class="tip">Loose skin depends mainly on how much weight you lose, how fast, your age and genetics. You can reduce the risk by losing gradually, lifting weights, eating enough protein and staying hydrated. For a 25+ kg loss some loose skin can still remain; that is normal and not a failure of the plan.</div>
+<div class="sec-title">Prevention strategy</div>
+<div class="card">
+<table class="ft">
+<tr><th>Factor</th><th>What to do</th></tr>
+<tr><td>Speed of loss</td><td>Aim 0.5–1 kg per week. Faster loss gives skin less time to adapt.</td></tr>
+<tr><td>Muscle</td><td>Strength training 5 days/week. Muscle fills space under the skin.</td></tr>
+<tr><td>Protein</td><td>110–120g daily. Needed for collagen and muscle.</td></tr>
+<tr><td>Vitamin C</td><td>Amla, lemon, guava daily for collagen synthesis.</td></tr>
+<tr><td>Hydration</td><td>4–4.5 L water. Dehydrated skin looks looser.</td></tr>
+<tr><td>Sun protection</td><td>Sunscreen SPF 30–50 on exposed skin. Sun damage breaks down collagen.</td></tr>
+<tr><td>No smoking/alcohol</td><td>Both damage collagen and slow skin recovery.</td></tr>
+</table>
+</div>
+<div class="sec-title">Supportive routine (helps skin quality, does not remove fat)</div>
+<div class="card">
+<ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Moisturise after every bath</div><div class="s-desc">Coconut oil, almond oil or a plain moisturiser on damp skin keeps it supple.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Gentle exfoliation 1–2× per week</div><div class="s-desc">Dry brushing or a soft scrub improves texture and circulation.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Cool final shower rinse</div><div class="s-desc">Refreshing and helps recovery, but it does not tighten skin permanently.</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">If loose skin remains at goal weight</div><div class="s-desc">Wait 6–12 months after stabilising weight, as skin keeps adapting. Treatments exist if it still bothers you; consult a dermatologist.</div></div></li>
+</ul>
+</div>
+</div>
+
+<!-- WATER SECTION -->
+<div id="water" class="section">
+<div class="tip">Target 4–4.5 L on gym days (about 3–3.5 L on rest days). Spread through the day; do not chug large amounts at once. If you have kidney, heart or other medical conditions, ask your doctor about your water limit.</div>
+<div class="sec-title">Hour-by-hour water plan</div>
+<div class="wgrid">
+<div class="wcard"><div class="wt">6:00 AM — 500 ml warm</div><div class="wd">Warm water + lemon on waking.</div></div>
+<div class="wcard"><div class="wt">8:30 AM — 300 ml</div><div class="wd">Before breakfast.</div></div>
+<div class="wcard"><div class="wt">10–12 AM — 500 ml</div><div class="wd">Sip while studying.</div></div>
+<div class="wcard"><div class="wt">12:30 PM — 300 ml</div><div class="wd">Before lunch. Then small sips only with meals.</div></div>
+<div class="wcard"><div class="wt">2–4 PM — 500 ml</div><div class="wd">Prevents the afternoon slump.</div></div>
+<div class="wcard"><div class="wt">4:30–7 PM — 500 ml</div><div class="wd">Study session; arrive at gym hydrated.</div></div>
+<div class="wcard"><div class="wt">During gym — 600–700 ml</div><div class="wd">Small sips every 10–15 min. Cool water is fine.</div></div>
+<div class="wcard"><div class="wt">After gym → 11 PM — 400 ml</div><div class="wd">Stop about 30 min before sleep.</div></div>
+</div>
+<div class="card">
+<h3>Warm vs cold</h3>
+<table class="ft">
+<tr><th>Type</th><th>When</th><th>Note</th></tr>
+<tr><td>Warm</td><td>Morning and after meals</td><td>Comfortable and easy to drink in larger amounts</td></tr>
+<tr><td>Room temperature</td><td>While studying</td><td>Best for steady hydration</td></tr>
+<tr><td>Cool/cold</td><td>During gym</td><td>Helps comfort during exercise</td></tr>
+</table>
+</div>
+<div class="card">
+<h3>Useful drinks</h3>
+<table class="ft">
+<tr><th>Drink</th><th>When</th><th>Benefit</th></tr>
+<tr><td>Lemon water (no sugar)</td><td>6 AM</td><td>Vitamin C, habit builder</td></tr>
+<tr><td>Green tea (no sugar)</td><td>4 PM, away from meals</td><td>Antioxidants, light caffeine for focus</td></tr>
+<tr><td>Coconut water</td><td>After gym, 200–300 ml</td><td>Potassium and electrolytes</td></tr>
+<tr><td>Nimbu pani (no sugar)</td><td>Instead of cold drinks</td><td>Replaces sugary drinks</td></tr>
+</table>
+</div>
+<div class="highlight"><strong>Tracking tip:</strong> Keep a 1 L bottle on your study table. Refill it 4 times and you are done. Pale-yellow urine means you are well hydrated.</div>
+</div>
+
+<!-- PROGRESS SECTION -->
+<div id="progress" class="section">
+<div class="tip">Realistic pace is 0.5–1 kg per week, with faster loss in the first 2–3 weeks (water). 104 kg to 75–80 kg is about 24–29 kg, so plan for 6–8 months rather than 5. Going slower protects muscle, hair, skin and your GATE energy.</div>
+<div class="sec-title">Month-wise targets</div>
+<div class="mgrid">
+<div class="mcard"><div class="ml">Month 1</div><div class="mt">104 → ~99–100 kg<br>Habits set, energy up, supplements started, less bloating</div></div>
+<div class="mcard"><div class="ml">Month 2</div><div class="mt">~95–96 kg<br>Face and waist visibly slimmer, hair less dry and frizzy</div></div>
+<div class="mcard"><div class="ml">Month 3</div><div class="mt">~91–92 kg<br>Clothes looser, strength up, shedding settling</div></div>
+<div class="mcard"><div class="ml">Month 4</div><div class="mt">~87–88 kg<br>Jawline starting to show, side belly reducing</div></div>
+<div class="mcard"><div class="ml">Month 5–6</div><div class="mt">~80–84 kg<br>Clear definition, good stamina</div></div>
+<div class="mcard"><div class="ml">Month 6–8</div><div class="mt">75–80 kg<br>Goal range; then maintain for a few months</div></div>
+</div>
+<div class="sec-title">Weekly check-in</div>
+<div class="card">
+<table class="ft">
+<tr><th>Metric</th><th>When</th><th>How</th></tr>
+<tr><td>Weight</td><td>Sunday morning</td><td>After toilet, before food, same scale</td></tr>
+<tr><td>Waist</td><td>Every 2 weeks</td><td>Tape at navel level</td></tr>
+<tr><td>Photos</td><td>Every 2 weeks</td><td>Same light, front/side/back</td></tr>
+<tr><td>Gym lifts</td><td>Every session</td><td>Note weights and reps; add 2.5 kg when reps feel easy</td></tr>
+<tr><td>Hair check</td><td>Monthly</td><td>Photo of parting and hairline; track shedding and texture</td></tr>
+</table>
+</div>
+<div class="sec-title">If weight stalls for 2–3 weeks</div>
+<div class="card">
+<ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Audit hidden calories</div><div class="s-desc">Oil, peanut butter, Complan, nuts and muesli add up. Measure for a week.</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Add 2000 steps a day</div><div class="s-desc">Easy extra burn without more fatigue.</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Trim 100 kcal, not more</div><div class="s-desc">For example one chapati at lunch. Do not drop below about 1700 kcal.</div></div></li>
+</ul>
+</div>
+<div class="sec-title">Week 1 action list</div>
+<div class="card">
+<ul class="step-list">
+<li class="step-item"><span class="num">1</span><div><div class="s-title">Book blood tests</div><div class="s-desc">B12, Vitamin D, ferritin + Hb, TSH (and zinc if available).</div></div></li>
+<li class="step-item"><span class="num">2</span><div><div class="s-title">Buy B12, Vitamin D3, sulphate-free shampoo, conditioner, serum</div></div></li>
+<li class="step-item"><span class="num">3</span><div><div class="s-title">Start the meal plan and measure portions for a week</div></div></li>
+<li class="step-item"><span class="num">4</span><div><div class="s-title">Gym Mon, Tue, Wed, Fri, Sat; rest Thu and Sun</div></div></li>
+<li class="step-item"><span class="num">5</span><div><div class="s-title">Cut sugar, cold drinks, fried food, maida</div></div></li>
+<li class="step-item"><span class="num">6</span><div><div class="s-title">Record baseline weight, waist and photos on Sunday</div></div></li>
+<li class="step-item"><span class="num">7</span><div><div class="s-title">Start hair routine on Sunday night</div></div></li>
+</ul>
+</div>
+<div class="warn">Weeks 2–3 are the hardest: sore muscles, slow scale. This is normal. Stay consistent. If you feel dizzy, very weak, or your period of fatigue lasts more than a week, increase food slightly and consult a doctor.</div>
+</div>
+
+</div><!-- end content -->
+<script>
+function sw(id,el){
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active');});
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo(0,0);
+}
+function so(meal,opt,el){
+  ['A','B','C'].forEach(function(o){
+    var p=document.getElementById(meal+o);
+    if(p){p.classList.remove('active');}
+  });
+  document.getElementById(meal+opt).classList.add('active');
+  el.parentElement.querySelectorAll('.otab').forEach(function(t){t.classList.remove('active');});
+  el.classList.add('active');
+}
+</script>
+</body>
+</html>
